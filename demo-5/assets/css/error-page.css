@@ -1,0 +1,179 @@
+/*==============
+  [00] Page General css
+=================*/
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", sans-serif;
+}
+
+.loader-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #000;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+}
+
+.loader {
+  border: 16px solid #000;
+  border-radius: 50%;
+  border-top: 16px double #ffe483;
+  border-bottom: 16px double #ffe483;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*==============
+  [01] Page css
+=================*/
+.page-section {
+  background: #000;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.page-section .content-detail {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.page-section .content-detail .mid-content {
+  text-align: center;
+  /* Move the background and make it smaller. */
+  /* Animation shown when entering the page and after the hover animation. */
+}
+.page-section .content-detail .mid-content h1 {
+  margin-bottom: 30px;
+  font-size: 70px;
+  text-align: center;
+  font-weight: 700;
+}
+.page-section .content-detail .mid-content .rainbow-text {
+  /* Create a conic gradient. */
+  /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
+  background: #ca4246;
+  background-color: #ca4246;
+  background: conic-gradient(#ca4246 16.666%, #e16541 16.666%, #e16541 33.333%, #f18f43 33.333%, #f18f43 50%, #8b9862 50%, #8b9862 66.666%, #476098 66.666%, #476098 83.333%, #a7489b 83.333%);
+  background-size: 57%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: rainbow-text-animation-rev 5s infinite linear;
+          animation: rainbow-text-animation-rev 5s infinite linear;
+  cursor: pointer;
+}
+@-webkit-keyframes rainbow-text-animation-rev {
+  0% {
+    background-size: 200%;
+    background-position: -9em 1em;
+  }
+  20% {
+    background-size: 50%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 200%;
+    background-position: 0 0;
+  }
+}
+@keyframes rainbow-text-animation-rev {
+  0% {
+    background-size: 200%;
+    background-position: -9em 1em;
+  }
+  20% {
+    background-size: 50%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 200%;
+    background-position: 0 0;
+  }
+}
+.page-section .content-detail .mid-content .detail-text {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.page-section .content-detail .mid-content .sub-title {
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 20px;
+}
+.page-section .content-detail .mid-content .back-btn {
+  margin-top: 15px;
+  font-family: "Quicksand", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.page-section .content-detail .mid-content .back-btn .btn {
+  padding: 8px 15px;
+  color: #000000;
+  letter-spacing: 2px;
+  border-radius: 30px;
+  font-size: 14px;
+  background-color: rgb(255, 255, 255);
+  font-weight: 500;
+}
+/*# sourceMappingURL=error-page.css.map */

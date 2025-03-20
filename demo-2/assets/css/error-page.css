@@ -1,0 +1,200 @@
+/*==============
+  [00] Page General css
+=================*/
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", sans-serif;
+}
+
+.loader-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #000;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+}
+
+.loader {
+  border: 16px solid #000;
+  border-radius: 50%;
+  border-top: 16px double #ffe483;
+  border-bottom: 16px double #ffe483;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*==============
+  [01] Page css
+=================*/
+.page-section {
+  background: #000;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.page-section canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.page-section .full-width-screen {
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
+}
+.page-section .content-detail {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.page-section .content-detail .sub-title,
+.page-section .content-detail .detail-text {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+}
+.page-section .content-detail .sub-title {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 30px;
+}
+.page-section .content-detail .global-title {
+  display: block;
+  color: #ffffff;
+  font-size: 150px;
+  font-weight: 800;
+}
+.page-section .content-detail .maintenance {
+  font-size: 60px;
+}
+.page-section .content-detail .astro {
+  width: 200px;
+  position: absolute;
+  right: 280px;
+  top: 135px;
+  -webkit-animation: astro 15s linear infinite alternate;
+          animation: astro 15s linear infinite alternate;
+}
+.page-section .content-detail .spaceship {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 250px;
+  bottom: 70px;
+  -webkit-animation: spaceship 10s infinite alternate;
+          animation: spaceship 10s infinite alternate;
+}
+.page-section .back-btn {
+  margin-top: 15px;
+}
+.page-section .back-btn .btn {
+  padding: 8px 15px;
+  color: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  font-size: 14px;
+  background-color: #ffffff;
+  font-weight: 500;
+}
+.page-section .back-btn .btn:hover {
+  color: #ffffff;
+  background-color: transparent;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+canvas {
+  width: 100%;
+  height: 100vh;
+}
+
+@-webkit-keyframes astro {
+  from {
+    -webkit-transform: translateY(90px) rotate(0deg);
+            transform: translateY(90px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translateY(-90px) rotate(-5deg);
+            transform: translateY(-90px) rotate(-5deg);
+  }
+}
+
+@keyframes astro {
+  from {
+    -webkit-transform: translateY(90px) rotate(0deg);
+            transform: translateY(90px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translateY(-90px) rotate(-5deg);
+            transform: translateY(-90px) rotate(-5deg);
+  }
+}
+@-webkit-keyframes spaceship {
+  0% {
+    -webkit-transform: translatex(0) rotate(0deg);
+            transform: translatex(0) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translatex(100px) rotate(5deg);
+            transform: translatex(100px) rotate(5deg);
+  }
+}
+@keyframes spaceship {
+  0% {
+    -webkit-transform: translatex(0) rotate(0deg);
+            transform: translatex(0) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translatex(100px) rotate(5deg);
+            transform: translatex(100px) rotate(5deg);
+  }
+}
+/*# sourceMappingURL=error-page.css.map */

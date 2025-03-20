@@ -1,0 +1,189 @@
+/* Responsive css */
+@media (max-width: 1199px) {
+  .page-section .content-detail .spaceship {
+    width: 160px;
+    height: 160px;
+    left: 80px;
+    bottom: 50px;
+  }
+  .page-section .content-detail .astro {
+    width: 160px;
+    right: 200px;
+  }
+}
+@media (max-width: 991px) {
+  .page-section .content-detail {
+    padding: 0 15px;
+  }
+  .page-section .content-detail .global-title {
+    font-size: 120px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .page-section .content-detail .maintenance {
+    font-size: 50px;
+  }
+  .page-section .content-detail .sub-title {
+    font-weight: 500;
+    font-size: 25px;
+  }
+  .page-section .content-detail .detail-text {
+    font-size: 14px;
+  }
+  .page-section .content-detail .spaceship {
+    width: 150px;
+    height: 150px;
+    left: 120px;
+    bottom: 70px;
+  }
+  .page-section .content-detail .astro {
+    width: 150px;
+    right: 130px;
+  }
+}
+@media (max-width: 768px) {
+  .page-section .content-detail {
+    padding: 0 15px;
+  }
+  .page-section .content-detail .global-title {
+    font-size: 110px;
+    font-weight: 700;
+  }
+  .page-section .content-detail .maintenance {
+    font-size: 40px;
+  }
+  .page-section .content-detail .sub-title {
+    font-weight: 500;
+    font-size: 23px;
+  }
+  .page-section .content-detail .detail-text {
+    font-size: 13px;
+  }
+  .page-section .content-detail .spaceship {
+    width: 140px;
+    height: 140px;
+    left: 70px;
+    bottom: 70px;
+  }
+  .page-section .content-detail .astro {
+    width: 140px;
+    right: 100px;
+  }
+}
+@media (max-width: 575px) {
+  .page-section .content-detail {
+    padding: 0 15px;
+  }
+  .page-section .content-detail .global-title {
+    font-size: 100px;
+    font-weight: 600;
+  }
+  .page-section .content-detail .maintenance {
+    font-size: 30px;
+  }
+  .page-section .content-detail .sub-title {
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .page-section .content-detail .detail-text {
+    font-size: 13px;
+  }
+  .page-section .content-detail .spaceship {
+    width: 140px;
+    height: 140px;
+    left: 70px;
+    bottom: 70px;
+  }
+  .page-section .content-detail .astro {
+    width: 120px;
+    right: 50px;
+  }
+  .page-section .back-btn .btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  @-webkit-keyframes astro {
+    from {
+      -webkit-transform: translateY(25px) rotate(0deg);
+              transform: translateY(25px) rotate(0deg);
+    }
+    to {
+      -webkit-transform: translateY(-25px) rotate(-5deg);
+              transform: translateY(-25px) rotate(-5deg);
+    }
+  }
+  @keyframes astro {
+    from {
+      -webkit-transform: translateY(25px) rotate(0deg);
+              transform: translateY(25px) rotate(0deg);
+    }
+    to {
+      -webkit-transform: translateY(-25px) rotate(-5deg);
+              transform: translateY(-25px) rotate(-5deg);
+    }
+  }
+  @-webkit-keyframes spaceship {
+    0% {
+      -webkit-transform: translatex(0) rotate(0deg);
+              transform: translatex(0) rotate(0deg);
+    }
+    100% {
+      -webkit-transform: translatex(50px) rotate(5deg);
+              transform: translatex(50px) rotate(5deg);
+    }
+  }
+  @keyframes spaceship {
+    0% {
+      -webkit-transform: translatex(0) rotate(0deg);
+              transform: translatex(0) rotate(0deg);
+    }
+    100% {
+      -webkit-transform: translatex(50px) rotate(5deg);
+              transform: translatex(50px) rotate(5deg);
+    }
+  }
+}
+@media (max-width: 480px) {
+  .page-section .content-detail {
+    padding: 0 15px;
+  }
+  .page-section .content-detail .global-title {
+    font-size: 90px;
+    font-weight: 600;
+  }
+  .page-section .content-detail .maintenance {
+    font-size: 25px;
+  }
+  .page-section .content-detail .sub-title {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .page-section .content-detail .detail-text {
+    font-size: 13px;
+  }
+  .page-section .content-detail .spaceship {
+    width: 90px;
+    height: 90px;
+    left: 70px;
+    bottom: 90px;
+  }
+  .page-section .content-detail .astro {
+    width: 90px;
+    right: 50px;
+  }
+  .page-section .back-btn .btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 280px) {
+  .page-section .content-detail .astro {
+    width: 90px;
+    right: 50px;
+    top: 90px;
+  }
+  .maintenance {
+    font-size: 30px;
+  }
+}
+/*# sourceMappingURL=error-page-responsive.css.map */

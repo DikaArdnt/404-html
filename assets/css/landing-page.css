@@ -1,0 +1,157 @@
+/*==============
+  [00] Page General css
+=================*/
+body {
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: 0.02rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", sans-serif;
+}
+
+.bg {
+  background-color: #000;
+}
+
+.main-screen {
+  height: 100%;
+  padding: 60px 0 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.title img {
+  width: 70px;
+  margin-bottom: 30px;
+}
+.title h1 {
+  max-width: 500px;
+  margin: auto auto 25px auto;
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 800;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.title .sub-text {
+  max-width: 500px;
+  margin: auto auto 50px auto;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+}
+
+.yellow {
+  border: 1px solid #ffe483;
+}
+
+.white {
+  border: 1px solid #fff;
+}
+
+.blue {
+  border: 1px solid #71f7fd;
+}
+
+.demos {
+  margin-bottom: 30px;
+}
+
+.demos-card {
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.demos-card img {
+  width: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.demos-card:hover img {
+  -webkit-transform: scale(1.2) rotate(5deg);
+          transform: scale(1.2) rotate(5deg);
+}
+
+.btn-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.btn-list a.yellow {
+  background-color: #ffe483;
+  color: #000;
+}
+.btn-list a.yellow:hover {
+  background-color: transparent;
+  border: 1px solid #ffe483;
+  color: #ffe483;
+}
+.btn-list a.white {
+  background-color: #fff;
+  color: #000;
+}
+.btn-list a.white:hover {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.btn-list a.blue {
+  background-color: #71f7fd;
+  color: #000;
+}
+.btn-list a.blue:hover {
+  background-color: transparent;
+  border: 1px solid #71f7fd;
+  color: #71f7fd;
+}
+.btn-list a {
+  margin: 0 5px;
+  padding: 5px 15px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+.btn-list a:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}

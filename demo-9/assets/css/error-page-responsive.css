@@ -1,0 +1,37 @@
+/* Responsive css */
+@media (max-width: 1024px) {
+  .page-section .content-detail .global-title,
+.page-section .content-detail .construction {
+    font-size: 85px;
+  }
+  .page-section .content-detail .sub-title {
+    font-size: 25px;
+  }
+  .page-section .content-detail {
+    font-size: 60px;
+  }
+}
+@media (max-width: 612px) {
+  .page-section .content-detail .global-title {
+    font-size: 80px;
+  }
+  .page-section .content-detail .construction {
+    font-size: 60px;
+  }
+  .page-section .content-detail {
+    font-size: 55px;
+  }
+}
+@media (max-width: 420px) {
+  .page-section .content-detail .construction {
+    font-size: 40px;
+  }
+}
+@media (max-width: 320px) {
+  .page-section .content-detail .global-title {
+    font-size: 40px;
+  }
+}
+.page-section .content-detail .detail-text {
+  font-size: 16px;
+}

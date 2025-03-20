@@ -1,0 +1,142 @@
+/*==============
+  [00] Page General css
+=================*/
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", sans-serif;
+}
+
+.loader-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #000;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+}
+
+.loader {
+  border: 16px solid #000;
+  border-radius: 50%;
+  border-top: 16px double #ffe483;
+  border-bottom: 16px double #ffe483;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*==============
+  [01] Page css
+=================*/
+.page-section {
+  background: #000;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.page-section canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.page-section .full-width-screen {
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+.page-section .content-detail {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.page-section .content-detail .sub-title,
+.page-section .content-detail .detail-text {
+  display: block;
+  color: #ffe483;
+  text-align: center;
+}
+.page-section .content-detail .sub-title {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 30px;
+}
+.page-section .content-detail .back-btn {
+  margin-top: 15px;
+}
+.page-section .content-detail .back-btn .btn {
+  padding: 8px 15px;
+  color: #000000;
+  border: 1px solid #ffe483;
+  border-radius: 30px;
+  font-size: 14px;
+  background-color: #ffe483;
+  font-weight: 500;
+}
+.page-section .content-detail .back-btn .btn:hover {
+  color: #ffe483;
+  background-color: transparent;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.page-section .content-detail .global-title {
+  display: block;
+  color: #ffe483;
+  font-size: 150px;
+  font-weight: 800;
+}
+.page-section .content-detail .maintenance {
+  font-size: 50px;
+}
+
+canvas {
+  width: 100%;
+  height: 100vh;
+}
+/*# sourceMappingURL=error-page.css.map */

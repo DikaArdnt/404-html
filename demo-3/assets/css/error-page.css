@@ -1,0 +1,1433 @@
+/*==============
+  [00] Page General css
+=================*/
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", sans-serif;
+}
+
+.loader-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #000;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+}
+
+.loader {
+  border: 16px solid #000;
+  border-radius: 50%;
+  border-top: 16px double #ffe483;
+  border-bottom: 16px double #ffe483;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*==============
+  [01] Page css
+=================*/
+.page-section {
+  background: #000;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.page-section canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.page-section .full-width-screen {
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
+}
+.page-section .content-detail {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.page-section .content-detail .sub-title,
+.page-section .content-detail .detail-text {
+  display: block;
+  color: #71f7fd;
+  text-align: center;
+}
+.page-section .content-detail .sub-title {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 30px;
+}
+.page-section .content-detail .back-btn {
+  margin-top: 15px;
+}
+.page-section .content-detail .back-btn .btn {
+  padding: 8px 15px;
+  color: #000000;
+  border: 1px solid #71f7fd;
+  border-radius: 30px;
+  font-size: 14px;
+  background-color: #71f7fd;
+  font-weight: 500;
+}
+.page-section .content-detail .back-btn .btn:hover {
+  color: #71f7fd;
+  background-color: transparent;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.page-section .content-detail .global-title {
+  display: block;
+  color: #71f7fd;
+  font-size: 150px;
+  font-weight: 800;
+}
+.page-section .content-detail .construction {
+  font-size: 60px;
+}
+
+.origin,
+.control,
+.galaxy,
+.star {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.origin {
+  -webkit-transform: translate3d(0vw, 0vh, 0vmin);
+          transform: translate3d(0vw, 0vh, 0vmin);
+}
+
+.control {
+  -webkit-transform: scale3d(0, 0, 0);
+          transform: scale3d(0, 0, 0);
+  -webkit-animation: appear 10s linear forwards;
+  animation: appear 10s linear forwards;
+}
+
+.galaxy {
+  -webkit-animation: rotation 10s linear infinite;
+  animation: rotation 10s linear infinite;
+}
+
+.star, .star::before, .star::after {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.star::before, .star::after {
+  background: var(--background);
+  border-radius: 50%;
+  -webkit-box-shadow: var(--shadow);
+          box-shadow: var(--shadow);
+  content: "";
+  height: var(--size);
+  width: var(--size);
+}
+
+.star::before {
+  -webkit-transform: var(--transform);
+          transform: var(--transform);
+}
+.star::after {
+  -webkit-transform: scale3d(-1, -1, -1) var(--transform);
+          transform: scale3d(-1, -1, -1) var(--transform);
+}
+.star:nth-of-type(1) {
+  --size: 0.7176074694vmin;
+  --background: #9ff6a0;
+  --shadow: 0 0 0.9987863994vmin 0.0743514997vmin #a9f6aa;
+  --transform: rotate3d(1, 0, 0, 74deg) rotate3d(0, 1, 0, 320deg) rotate3d(0, 0, 1, 133deg) translate3d(0, 0, 76.5919556685vmin);
+}
+.star:nth-of-type(2) {
+  --size: 0.2533607672vmin;
+  --background: #f79090;
+  --shadow: 0 0 0.220841607vmin 0.1147377049vmin #f79090;
+  --transform: rotate3d(1, 0, 0, 44deg) rotate3d(0, 1, 0, 334deg) rotate3d(0, 0, 1, 181deg) translate3d(0, 0, 65.8523861021vmin);
+}
+.star:nth-of-type(3) {
+  --size: 0.3983272785vmin;
+  --background: #706df4;
+  --shadow: 0 0 0.2125384871vmin 0.0750565202vmin #7a77f4;
+  --transform: rotate3d(1, 0, 0, 257deg) rotate3d(0, 1, 0, 171deg) rotate3d(0, 0, 1, 77deg) translate3d(0, 0, 77.9194682348vmin);
+}
+.star:nth-of-type(4) {
+  --size: 0.5235434819vmin;
+  --background: #36b7ef;
+  --shadow: 0 0 0.5687075811vmin 0.0560131874vmin #36b7ef;
+  --transform: rotate3d(1, 0, 0, 136deg) rotate3d(0, 1, 0, 82deg) rotate3d(0, 0, 1, 201deg) translate3d(0, 0, 73.5479122337vmin);
+}
+.star:nth-of-type(5) {
+  --size: 0.5330719962vmin;
+  --background: #f79a9a;
+  --shadow: 0 0 0.4066580864vmin 0.1001916011vmin #f79a9a;
+  --transform: rotate3d(1, 0, 0, 48deg) rotate3d(0, 1, 0, 43deg) rotate3d(0, 0, 1, 194deg) translate3d(0, 0, 66.0418054039vmin);
+}
+.star:nth-of-type(6) {
+  --size: 0.3266122166vmin;
+  --background: #ff8fbc;
+  --shadow: 0 0 0.3885745218vmin 0.1606075305vmin #ff8fbc;
+  --transform: rotate3d(1, 0, 0, 189deg) rotate3d(0, 1, 0, 59deg) rotate3d(0, 0, 1, 119deg) translate3d(0, 0, 69.5589591661vmin);
+}
+.star:nth-of-type(7) {
+  --size: 0.7230687256vmin;
+  --background: #625ff3;
+  --shadow: 0 0 0.8822713714vmin 0.316682346vmin #8885f5;
+  --transform: rotate3d(1, 0, 0, 224deg) rotate3d(0, 1, 0, 26deg) rotate3d(0, 0, 1, 95deg) translate3d(0, 0, 75.1737437103vmin);
+}
+.star:nth-of-type(8) {
+  --size: 0.5546577345vmin;
+  --background: #e4ebef;
+  --shadow: 0 0 0.7551130728vmin 0.1476662442vmin #f8f9fb;
+  --transform: rotate3d(1, 0, 0, 354deg) rotate3d(0, 1, 0, 79deg) rotate3d(0, 0, 1, 0deg) translate3d(0, 0, 77.1640819278vmin);
+}
+.star:nth-of-type(9) {
+  --size: 0.5945812494vmin;
+  --background: #fff08a;
+  --shadow: 0 0 0.6180052109vmin 0.1809371972vmin #fff6bd;
+  --transform: rotate3d(1, 0, 0, 109deg) rotate3d(0, 1, 0, 57deg) rotate3d(0, 0, 1, 346deg) translate3d(0, 0, 75.0249859052vmin);
+}
+.star:nth-of-type(10) {
+  --size: 0.7369901675vmin;
+  --background: #eee784;
+  --shadow: 0 0 0.3828865501vmin 0.0439605801vmin #f4efb0;
+  --transform: rotate3d(1, 0, 0, 55deg) rotate3d(0, 1, 0, 188deg) rotate3d(0, 0, 1, 26deg) translate3d(0, 0, 68.4980547495vmin);
+}
+.star:nth-of-type(11) {
+  --size: 0.7305609681vmin;
+  --background: #ff527c;
+  --shadow: 0 0 0.6895826993vmin 0.0931086882vmin #ff527c;
+  --transform: rotate3d(1, 0, 0, 279deg) rotate3d(0, 1, 0, 140deg) rotate3d(0, 0, 1, 290deg) translate3d(0, 0, 66.9245765602vmin);
+}
+.star:nth-of-type(12) {
+  --size: 0.2546089822vmin;
+  --background: #ff80b3;
+  --shadow: 0 0 0.2104843336vmin 0.0756015424vmin #ff80b3;
+  --transform: rotate3d(1, 0, 0, 85deg) rotate3d(0, 1, 0, 36deg) rotate3d(0, 0, 1, 42deg) translate3d(0, 0, 67.9712601782vmin);
+}
+.star:nth-of-type(13) {
+  --size: 0.3693464925vmin;
+  --background: #27b2ee;
+  --shadow: 0 0 0.507858272vmin 0.1161318376vmin #27b2ee;
+  --transform: rotate3d(1, 0, 0, 308deg) rotate3d(0, 1, 0, 290deg) rotate3d(0, 0, 1, 91deg) translate3d(0, 0, 80.4515426799vmin);
+}
+.star:nth-of-type(14) {
+  --size: 0.3470668595vmin;
+  --background: #ff255a;
+  --shadow: 0 0 0.4732202037vmin 0.0069150828vmin #ff5880;
+  --transform: rotate3d(1, 0, 0, 147deg) rotate3d(0, 1, 0, 11deg) rotate3d(0, 0, 1, 140deg) translate3d(0, 0, 76.0484665406vmin);
+}
+.star:nth-of-type(15) {
+  --size: 0.3759308472vmin;
+  --background: #f79595;
+  --shadow: 0 0 0.3446536487vmin 0.141387341vmin #f79595;
+  --transform: rotate3d(1, 0, 0, 198deg) rotate3d(0, 1, 0, 220deg) rotate3d(0, 0, 1, 161deg) translate3d(0, 0, 69.7635365778vmin);
+}
+.star:nth-of-type(16) {
+  --size: 0.4552788551vmin;
+  --background: #f79d65;
+  --shadow: 0 0 0.6042257805vmin 0.2155498683vmin #f9b58b;
+  --transform: rotate3d(1, 0, 0, 151deg) rotate3d(0, 1, 0, 93deg) rotate3d(0, 0, 1, 94deg) translate3d(0, 0, 71.5465223222vmin);
+}
+.star:nth-of-type(17) {
+  --size: 0.6230021877vmin;
+  --background: #ff527c;
+  --shadow: 0 0 0.6391444044vmin 0.2817362339vmin #ff527c;
+  --transform: rotate3d(1, 0, 0, 339deg) rotate3d(0, 1, 0, 28deg) rotate3d(0, 0, 1, 198deg) translate3d(0, 0, 72.9056787691vmin);
+}
+.star:nth-of-type(18) {
+  --size: 0.4487323651vmin;
+  --background: #501f5d;
+  --shadow: 0 0 0.4310956499vmin 0.0647358545vmin #722b83;
+  --transform: rotate3d(1, 0, 0, 179deg) rotate3d(0, 1, 0, 257deg) rotate3d(0, 0, 1, 204deg) translate3d(0, 0, 73.0774473342vmin);
+}
+.star:nth-of-type(19) {
+  --size: 0.7243442885vmin;
+  --background: #ff85b6;
+  --shadow: 0 0 0.8423356924vmin 0.0912416292vmin #ff85b6;
+  --transform: rotate3d(1, 0, 0, 216deg) rotate3d(0, 1, 0, 281deg) rotate3d(0, 0, 1, 83deg) translate3d(0, 0, 72.9228726054vmin);
+}
+.star:nth-of-type(20) {
+  --size: 0.6247139025vmin;
+  --background: #dee6ec;
+  --shadow: 0 0 0.6920336369vmin 0.2290889135vmin #fefefe;
+  --transform: rotate3d(1, 0, 0, 279deg) rotate3d(0, 1, 0, 110deg) rotate3d(0, 0, 1, 81deg) translate3d(0, 0, 76.2600248134vmin);
+}
+.star:nth-of-type(21) {
+  --size: 0.3510655954vmin;
+  --background: #ff85b6;
+  --shadow: 0 0 0.3162272486vmin 0.0465987263vmin #ff85b6;
+  --transform: rotate3d(1, 0, 0, 173deg) rotate3d(0, 1, 0, 227deg) rotate3d(0, 0, 1, 282deg) translate3d(0, 0, 68.1386982193vmin);
+}
+.star:nth-of-type(22) {
+  --size: 0.6569960106vmin;
+  --background: #8885f5;
+  --shadow: 0 0 0.7810699673vmin 0.2492982163vmin #8885f5;
+  --transform: rotate3d(1, 0, 0, 214deg) rotate3d(0, 1, 0, 359deg) rotate3d(0, 0, 1, 351deg) translate3d(0, 0, 87.7158962293vmin);
+}
+.star:nth-of-type(23) {
+  --size: 0.6185003076vmin;
+  --background: #5a2268;
+  --shadow: 0 0 0.5107530224vmin 0.3061411077vmin #682878;
+  --transform: rotate3d(1, 0, 0, 37deg) rotate3d(0, 1, 0, 177deg) rotate3d(0, 0, 1, 14deg) translate3d(0, 0, 82.9899463383vmin);
+}
+.star:nth-of-type(24) {
+  --size: 0.2508963377vmin;
+  --background: #5e5af2;
+  --shadow: 0 0 0.170459172vmin 0.049587012vmin #8c8af6;
+  --transform: rotate3d(1, 0, 0, 97deg) rotate3d(0, 1, 0, 192deg) rotate3d(0, 0, 1, 126deg) translate3d(0, 0, 87.5945354932vmin);
+}
+.star:nth-of-type(25) {
+  --size: 0.3203829123vmin;
+  --background: #5e5af2;
+  --shadow: 0 0 0.2345023339vmin 0.153086161vmin #8c8af6;
+  --transform: rotate3d(1, 0, 0, 67deg) rotate3d(0, 1, 0, 150deg) rotate3d(0, 0, 1, 233deg) translate3d(0, 0, 78.4800826762vmin);
+}
+.star:nth-of-type(26) {
+  --size: 0.3184297406vmin;
+  --background: #ff3465;
+  --shadow: 0 0 0.2818489107vmin 0.0029151526vmin #ff4875;
+  --transform: rotate3d(1, 0, 0, 97deg) rotate3d(0, 1, 0, 243deg) rotate3d(0, 0, 1, 282deg) translate3d(0, 0, 87.8743391287vmin);
+}
+.star:nth-of-type(27) {
+  --size: 0.5979985202vmin;
+  --background: #f9b58b;
+  --shadow: 0 0 0.4730882234vmin 0.159535929vmin #f9b58b;
+  --transform: rotate3d(1, 0, 0, 251deg) rotate3d(0, 1, 0, 48deg) rotate3d(0, 0, 1, 38deg) translate3d(0, 0, 72.9631368489vmin);
+}
+.star:nth-of-type(28) {
+  --size: 0.4216209119vmin;
+  --background: #706df4;
+  --shadow: 0 0 0.6118596041vmin 0.0445401928vmin #7a77f4;
+  --transform: rotate3d(1, 0, 0, 299deg) rotate3d(0, 1, 0, 3deg) rotate3d(0, 0, 1, 320deg) translate3d(0, 0, 67.2296964077vmin);
+}
+.star:nth-of-type(29) {
+  --size: 0.4105573146vmin;
+  --background: #fff08a;
+  --shadow: 0 0 0.2235341595vmin 0.0349064305vmin #fff6bd;
+  --transform: rotate3d(1, 0, 0, 17deg) rotate3d(0, 1, 0, 108deg) rotate3d(0, 0, 1, 224deg) translate3d(0, 0, 65.3890955999vmin);
+}
+.star:nth-of-type(30) {
+  --size: 0.6352060658vmin;
+  --background: #b7f8b7;
+  --shadow: 0 0 0.570827036vmin 0.2092556949vmin #b7f8b7;
+  --transform: rotate3d(1, 0, 0, 247deg) rotate3d(0, 1, 0, 120deg) rotate3d(0, 0, 1, 53deg) translate3d(0, 0, 69.3800087048vmin);
+}
+.star:nth-of-type(31) {
+  --size: 0.3874862225vmin;
+  --background: #9bf59c;
+  --shadow: 0 0 0.5241986107vmin 0.1765082141vmin #adf7ae;
+  --transform: rotate3d(1, 0, 0, 246deg) rotate3d(0, 1, 0, 114deg) rotate3d(0, 0, 1, 291deg) translate3d(0, 0, 67.4915696122vmin);
+}
+.star:nth-of-type(32) {
+  --size: 0.7315134162vmin;
+  --background: #5e246c;
+  --shadow: 0 0 0.4279528449vmin 0.1291926181vmin #642674;
+  --transform: rotate3d(1, 0, 0, 28deg) rotate3d(0, 1, 0, 171deg) rotate3d(0, 0, 1, 97deg) translate3d(0, 0, 72.6052460558vmin);
+}
+.star:nth-of-type(33) {
+  --size: 0.6908399259vmin;
+  --background: #fff4ad;
+  --shadow: 0 0 0.7342774141vmin 0.0364257261vmin #fff4ad;
+  --transform: rotate3d(1, 0, 0, 68deg) rotate3d(0, 1, 0, 320deg) rotate3d(0, 0, 1, 319deg) translate3d(0, 0, 66.7165488491vmin);
+}
+.star:nth-of-type(34) {
+  --size: 0.6470090429vmin;
+  --background: #ff3465;
+  --shadow: 0 0 0.4615989282vmin 0.23848983vmin #ff4875;
+  --transform: rotate3d(1, 0, 0, 268deg) rotate3d(0, 1, 0, 247deg) rotate3d(0, 0, 1, 183deg) translate3d(0, 0, 89.8063825406vmin);
+}
+.star:nth-of-type(35) {
+  --size: 0.7413288157vmin;
+  --background: #eb1f93;
+  --shadow: 0 0 0.5445596524vmin 0.0024170238vmin #eb1f93;
+  --transform: rotate3d(1, 0, 0, 139deg) rotate3d(0, 1, 0, 124deg) rotate3d(0, 0, 1, 153deg) translate3d(0, 0, 65.7237925223vmin);
+}
+.star:nth-of-type(36) {
+  --size: 0.633904512vmin;
+  --background: #fff29e;
+  --shadow: 0 0 0.7665664238vmin 0.2814871875vmin #fff4a8;
+  --transform: rotate3d(1, 0, 0, 188deg) rotate3d(0, 1, 0, 225deg) rotate3d(0, 0, 1, 87deg) translate3d(0, 0, 69.7818269313vmin);
+}
+.star:nth-of-type(37) {
+  --size: 0.7496944539vmin;
+  --background: #f68282;
+  --shadow: 0 0 0.7136195545vmin 0.228045448vmin #f68c8c;
+  --transform: rotate3d(1, 0, 0, 64deg) rotate3d(0, 1, 0, 123deg) rotate3d(0, 0, 1, 169deg) translate3d(0, 0, 70.5840373947vmin);
+}
+.star:nth-of-type(38) {
+  --size: 0.3802571556vmin;
+  --background: #ff71aa;
+  --shadow: 0 0 0.4160423088vmin 0.1234893447vmin #ff85b6;
+  --transform: rotate3d(1, 0, 0, 263deg) rotate3d(0, 1, 0, 127deg) rotate3d(0, 0, 1, 18deg) translate3d(0, 0, 76.0308283203vmin);
+}
+.star:nth-of-type(39) {
+  --size: 0.6855750368vmin;
+  --background: #ff62a1;
+  --shadow: 0 0 0.7470949187vmin 0.3333178465vmin #ff95bf;
+  --transform: rotate3d(1, 0, 0, 202deg) rotate3d(0, 1, 0, 95deg) rotate3d(0, 0, 1, 93deg) translate3d(0, 0, 72.0845603733vmin);
+}
+.star:nth-of-type(40) {
+  --size: 0.4025880637vmin;
+  --background: #dd1486;
+  --shadow: 0 0 0.5299812472vmin 0.1595509113vmin #eb2495;
+  --transform: rotate3d(1, 0, 0, 270deg) rotate3d(0, 1, 0, 19deg) rotate3d(0, 0, 1, 251deg) translate3d(0, 0, 85.9388019411vmin);
+}
+.star:nth-of-type(41) {
+  --size: 0.4615440056vmin;
+  --background: #36b7ef;
+  --shadow: 0 0 0.2834701433vmin 0.0171343776vmin #36b7ef;
+  --transform: rotate3d(1, 0, 0, 145deg) rotate3d(0, 1, 0, 200deg) rotate3d(0, 0, 1, 47deg) translate3d(0, 0, 89.2807024068vmin);
+}
+.star:nth-of-type(42) {
+  --size: 0.5612886187vmin;
+  --background: #fff299;
+  --shadow: 0 0 0.2983567138vmin 0.2655260165vmin #fff4ad;
+  --transform: rotate3d(1, 0, 0, 289deg) rotate3d(0, 1, 0, 92deg) rotate3d(0, 0, 1, 44deg) translate3d(0, 0, 83.6665100007vmin);
+}
+.star:nth-of-type(43) {
+  --size: 0.4966836618vmin;
+  --background: #f8a673;
+  --shadow: 0 0 0.2616057087vmin 0.161577701vmin #f8ac7d;
+  --transform: rotate3d(1, 0, 0, 216deg) rotate3d(0, 1, 0, 91deg) rotate3d(0, 0, 1, 353deg) translate3d(0, 0, 73.9739228153vmin);
+}
+.star:nth-of-type(44) {
+  --size: 0.4548898651vmin;
+  --background: #9ff6a0;
+  --shadow: 0 0 0.2458145494vmin 0.1942787773vmin #a9f6aa;
+  --transform: rotate3d(1, 0, 0, 143deg) rotate3d(0, 1, 0, 241deg) rotate3d(0, 0, 1, 76deg) translate3d(0, 0, 70.3392766773vmin);
+}
+.star:nth-of-type(45) {
+  --size: 0.5482968664vmin;
+  --background: #fefefe;
+  --shadow: 0 0 0.8079568934vmin 0.2556654553vmin #fefefe;
+  --transform: rotate3d(1, 0, 0, 264deg) rotate3d(0, 1, 0, 129deg) rotate3d(0, 0, 1, 112deg) translate3d(0, 0, 82.2144353812vmin);
+}
+.star:nth-of-type(46) {
+  --size: 0.3679911379vmin;
+  --background: #fff5b2;
+  --shadow: 0 0 0.4805512259vmin 0.0235886977vmin #fff5b2;
+  --transform: rotate3d(1, 0, 0, 148deg) rotate3d(0, 1, 0, 194deg) rotate3d(0, 0, 1, 245deg) translate3d(0, 0, 80.2581908087vmin);
+}
+.star:nth-of-type(47) {
+  --size: 0.6445372227vmin;
+  --background: #fefefe;
+  --shadow: 0 0 0.7591550406vmin 0.0565929022vmin #fefefe;
+  --transform: rotate3d(1, 0, 0, 260deg) rotate3d(0, 1, 0, 10deg) rotate3d(0, 0, 1, 27deg) translate3d(0, 0, 69.9197514836vmin);
+}
+.star:nth-of-type(48) {
+  --size: 0.3017643369vmin;
+  --background: #6e2a7f;
+  --shadow: 0 0 0.1987442688vmin 0.119533087vmin #6e2a7f;
+  --transform: rotate3d(1, 0, 0, 103deg) rotate3d(0, 1, 0, 61deg) rotate3d(0, 0, 1, 169deg) translate3d(0, 0, 81.5994669587vmin);
+}
+.star:nth-of-type(49) {
+  --size: 0.5459585463vmin;
+  --background: #f1f4f7;
+  --shadow: 0 0 0.5994427667vmin 0.0685111967vmin #f1f4f7;
+  --transform: rotate3d(1, 0, 0, 349deg) rotate3d(0, 1, 0, 302deg) rotate3d(0, 0, 1, 201deg) translate3d(0, 0, 89.4211947187vmin);
+}
+.star:nth-of-type(50) {
+  --size: 0.6540594496vmin;
+  --background: #706df4;
+  --shadow: 0 0 0.5012736061vmin 0.1944579468vmin #7a77f4;
+  --transform: rotate3d(1, 0, 0, 151deg) rotate3d(0, 1, 0, 6deg) rotate3d(0, 0, 1, 127deg) translate3d(0, 0, 72.4757322504vmin);
+}
+.star:nth-of-type(51) {
+  --size: 0.670851478vmin;
+  --background: #f3efac;
+  --shadow: 0 0 0.7491213345vmin 0.3061762163vmin #f3efac;
+  --transform: rotate3d(1, 0, 0, 329deg) rotate3d(0, 1, 0, 134deg) rotate3d(0, 0, 1, 254deg) translate3d(0, 0, 73.1089403615vmin);
+}
+.star:nth-of-type(52) {
+  --size: 0.6191584264vmin;
+  --background: #f68282;
+  --shadow: 0 0 0.7137202815vmin 0.2934195794vmin #f68c8c;
+  --transform: rotate3d(1, 0, 0, 6deg) rotate3d(0, 1, 0, 160deg) rotate3d(0, 0, 1, 150deg) translate3d(0, 0, 66.3995460171vmin);
+}
+.star:nth-of-type(53) {
+  --size: 0.6366962789vmin;
+  --background: #fff4a8;
+  --shadow: 0 0 0.4797005646vmin 0.141181813vmin #fff4a8;
+  --transform: rotate3d(1, 0, 0, 312deg) rotate3d(0, 1, 0, 307deg) rotate3d(0, 0, 1, 7deg) translate3d(0, 0, 70.5846019641vmin);
+}
+.star:nth-of-type(54) {
+  --size: 0.4637678594vmin;
+  --background: #f4efb0;
+  --shadow: 0 0 0.4370209822vmin 0.1212490609vmin #f4efb0;
+  --transform: rotate3d(1, 0, 0, 38deg) rotate3d(0, 1, 0, 308deg) rotate3d(0, 0, 1, 127deg) translate3d(0, 0, 70.7243196529vmin);
+}
+.star:nth-of-type(55) {
+  --size: 0.6140016058vmin;
+  --background: #6e2a7f;
+  --shadow: 0 0 0.538656439vmin 0.2601295497vmin #6e2a7f;
+  --transform: rotate3d(1, 0, 0, 100deg) rotate3d(0, 1, 0, 218deg) rotate3d(0, 0, 1, 103deg) translate3d(0, 0, 80.3783613493vmin);
+}
+.star:nth-of-type(56) {
+  --size: 0.7477228028vmin;
+  --background: #9bf59c;
+  --shadow: 0 0 0.8738277751vmin 0.033955389vmin #adf7ae;
+  --transform: rotate3d(1, 0, 0, 91deg) rotate3d(0, 1, 0, 88deg) rotate3d(0, 0, 1, 343deg) translate3d(0, 0, 74.1508131734vmin);
+}
+.star:nth-of-type(57) {
+  --size: 0.4723719788vmin;
+  --background: #6e2a7f;
+  --shadow: 0 0 0.3307385037vmin 0.1998769382vmin #6e2a7f;
+  --transform: rotate3d(1, 0, 0, 134deg) rotate3d(0, 1, 0, 90deg) rotate3d(0, 0, 1, 123deg) translate3d(0, 0, 65.0187591444vmin);
+}
+.star:nth-of-type(58) {
+  --size: 0.6031045282vmin;
+  --background: #fff5b2;
+  --shadow: 0 0 0.8635246885vmin 0.0543980828vmin #fff5b2;
+  --transform: rotate3d(1, 0, 0, 280deg) rotate3d(0, 1, 0, 132deg) rotate3d(0, 0, 1, 330deg) translate3d(0, 0, 69.1551449402vmin);
+}
+.star:nth-of-type(59) {
+  --size: 0.6278934553vmin;
+  --background: #8c8af6;
+  --shadow: 0 0 0.8275005236vmin 0.2070252393vmin #8c8af6;
+  --transform: rotate3d(1, 0, 0, 115deg) rotate3d(0, 1, 0, 227deg) rotate3d(0, 0, 1, 292deg) translate3d(0, 0, 65.0820254879vmin);
+}
+.star:nth-of-type(60) {
+  --size: 0.6444788359vmin;
+  --background: #ebf0f3;
+  --shadow: 0 0 0.5805599304vmin 0.1971033961vmin #f1f4f7;
+  --transform: rotate3d(1, 0, 0, 348deg) rotate3d(0, 1, 0, 336deg) rotate3d(0, 0, 1, 325deg) translate3d(0, 0, 81.430284795vmin);
+}
+.star:nth-of-type(61) {
+  --size: 0.5809933693vmin;
+  --background: #eee784;
+  --shadow: 0 0 0.7766802063vmin 0.178894706vmin #f4efb0;
+  --transform: rotate3d(1, 0, 0, 3deg) rotate3d(0, 1, 0, 306deg) rotate3d(0, 0, 1, 302deg) translate3d(0, 0, 68.7805107766vmin);
+}
+.star:nth-of-type(62) {
+  --size: 0.501231351vmin;
+  --background: #ff255a;
+  --shadow: 0 0 0.4575621946vmin 0.0905693321vmin #ff5880;
+  --transform: rotate3d(1, 0, 0, 98deg) rotate3d(0, 1, 0, 33deg) rotate3d(0, 0, 1, 34deg) translate3d(0, 0, 87.8124167189vmin);
+}
+.star:nth-of-type(63) {
+  --size: 0.2848885639vmin;
+  --background: #ec2997;
+  --shadow: 0 0 0.3113572379vmin 0.1010472718vmin #ec2997;
+  --transform: rotate3d(1, 0, 0, 319deg) rotate3d(0, 1, 0, 306deg) rotate3d(0, 0, 1, 311deg) translate3d(0, 0, 74.2561227396vmin);
+}
+.star:nth-of-type(64) {
+  --size: 0.5128870878vmin;
+  --background: #96f597;
+  --shadow: 0 0 0.5496583252vmin 0.2513904822vmin #b2f7b3;
+  --transform: rotate3d(1, 0, 0, 150deg) rotate3d(0, 1, 0, 12deg) rotate3d(0, 0, 1, 263deg) translate3d(0, 0, 77.6147499286vmin);
+}
+.star:nth-of-type(65) {
+  --size: 0.4473898907vmin;
+  --background: #ff4875;
+  --shadow: 0 0 0.3779786718vmin 0.1927563674vmin #ff4875;
+  --transform: rotate3d(1, 0, 0, 153deg) rotate3d(0, 1, 0, 25deg) rotate3d(0, 0, 1, 123deg) translate3d(0, 0, 89.9922633109vmin);
+}
+.star:nth-of-type(66) {
+  --size: 0.6854621866vmin;
+  --background: #dee6ec;
+  --shadow: 0 0 0.4148798585vmin 0.1225742647vmin #fefefe;
+  --transform: rotate3d(1, 0, 0, 60deg) rotate3d(0, 1, 0, 345deg) rotate3d(0, 0, 1, 263deg) translate3d(0, 0, 69.3895650262vmin);
+}
+.star:nth-of-type(67) {
+  --size: 0.3812381755vmin;
+  --background: #f8f9fb;
+  --shadow: 0 0 0.2551859089vmin 0.0150722319vmin #f8f9fb;
+  --transform: rotate3d(1, 0, 0, 315deg) rotate3d(0, 1, 0, 286deg) rotate3d(0, 0, 1, 54deg) translate3d(0, 0, 87.3040653409vmin);
+}
+.star:nth-of-type(68) {
+  --size: 0.5599684132vmin;
+  --background: #f46f6f;
+  --shadow: 0 0 0.620896954vmin 0.1443981227vmin #f89f9f;
+  --transform: rotate3d(1, 0, 0, 125deg) rotate3d(0, 1, 0, 97deg) rotate3d(0, 0, 1, 34deg) translate3d(0, 0, 74.473982763vmin);
+}
+.star:nth-of-type(69) {
+  --size: 0.33084716vmin;
+  --background: #ff85b6;
+  --shadow: 0 0 0.2284551412vmin 0.0643766085vmin #ff85b6;
+  --transform: rotate3d(1, 0, 0, 40deg) rotate3d(0, 1, 0, 276deg) rotate3d(0, 0, 1, 119deg) translate3d(0, 0, 70.6278050624vmin);
+}
+.star:nth-of-type(70) {
+  --size: 0.6645885536vmin;
+  --background: #542061;
+  --shadow: 0 0 0.8200406955vmin 0.0437579894vmin #6e2a7f;
+  --transform: rotate3d(1, 0, 0, 303deg) rotate3d(0, 1, 0, 274deg) rotate3d(0, 0, 1, 79deg) translate3d(0, 0, 86.147234044vmin);
+}
+.star:nth-of-type(71) {
+  --size: 0.294092897vmin;
+  --background: #5a2268;
+  --shadow: 0 0 0.2843892145vmin 0.0884090048vmin #682878;
+  --transform: rotate3d(1, 0, 0, 245deg) rotate3d(0, 1, 0, 184deg) rotate3d(0, 0, 1, 83deg) translate3d(0, 0, 68.849057318vmin);
+}
+.star:nth-of-type(72) {
+  --size: 0.5007494036vmin;
+  --background: #6e2a7f;
+  --shadow: 0 0 0.4507974096vmin 0.0547603664vmin #6e2a7f;
+  --transform: rotate3d(1, 0, 0, 258deg) rotate3d(0, 1, 0, 28deg) rotate3d(0, 0, 1, 275deg) translate3d(0, 0, 81.9475609652vmin);
+}
+.star:nth-of-type(73) {
+  --size: 0.327952984vmin;
+  --background: #e6158b;
+  --shadow: 0 0 0.3130685769vmin 0.0298001694vmin #ea1b90;
+  --transform: rotate3d(1, 0, 0, 210deg) rotate3d(0, 1, 0, 221deg) rotate3d(0, 0, 1, 6deg) translate3d(0, 0, 69.6167615897vmin);
+}
+.star:nth-of-type(74) {
+  --size: 0.2857258952vmin;
+  --background: #f8a673;
+  --shadow: 0 0 0.399868161vmin 0.034011674vmin #f8ac7d;
+  --transform: rotate3d(1, 0, 0, 332deg) rotate3d(0, 1, 0, 351deg) rotate3d(0, 0, 1, 104deg) translate3d(0, 0, 70.2282418659vmin);
+}
+.star:nth-of-type(75) {
+  --size: 0.5702644141vmin;
+  --background: #8380f5;
+  --shadow: 0 0 0.5326088525vmin 0.1536944253vmin #8380f5;
+  --transform: rotate3d(1, 0, 0, 45deg) rotate3d(0, 1, 0, 259deg) rotate3d(0, 0, 1, 330deg) translate3d(0, 0, 74.62725747vmin);
+}
+.star:nth-of-type(76) {
+  --size: 0.3587826758vmin;
+  --background: #fff4ad;
+  --shadow: 0 0 0.3686798626vmin 0.0968690569vmin #fff4ad;
+  --transform: rotate3d(1, 0, 0, 12deg) rotate3d(0, 1, 0, 345deg) rotate3d(0, 0, 1, 202deg) translate3d(0, 0, 77.293260633vmin);
+}
+.star:nth-of-type(77) {
+  --size: 0.2743490627vmin;
+  --background: #501f5d;
+  --shadow: 0 0 0.2235942767vmin 0.1252225223vmin #722b83;
+  --transform: rotate3d(1, 0, 0, 1deg) rotate3d(0, 1, 0, 159deg) rotate3d(0, 0, 1, 47deg) translate3d(0, 0, 78.075090382vmin);
+}
+.star:nth-of-type(78) {
+  --size: 0.3463594982vmin;
+  --background: #adf7ae;
+  --shadow: 0 0 0.3921433657vmin 0.0050861723vmin #adf7ae;
+  --transform: rotate3d(1, 0, 0, 304deg) rotate3d(0, 1, 0, 342deg) rotate3d(0, 0, 1, 193deg) translate3d(0, 0, 76.3956208958vmin);
+}
+.star:nth-of-type(79) {
+  --size: 0.689953109vmin;
+  --background: #ff527c;
+  --shadow: 0 0 0.9680576591vmin 0.0881754118vmin #ff527c;
+  --transform: rotate3d(1, 0, 0, 12deg) rotate3d(0, 1, 0, 247deg) rotate3d(0, 0, 1, 93deg) translate3d(0, 0, 76.6210943382vmin);
+}
+.star:nth-of-type(80) {
+  --size: 0.4539633363vmin;
+  --background: #f9b287;
+  --shadow: 0 0 0.5229715169vmin 0.1591170794vmin #f9b287;
+  --transform: rotate3d(1, 0, 0, 196deg) rotate3d(0, 1, 0, 285deg) rotate3d(0, 0, 1, 275deg) translate3d(0, 0, 67.8991499524vmin);
+}
+.star:nth-of-type(81) {
+  --size: 0.3148424299vmin;
+  --background: #eb2495;
+  --shadow: 0 0 0.1714542572vmin 0.0991123769vmin #eb2495;
+  --transform: rotate3d(1, 0, 0, 114deg) rotate3d(0, 1, 0, 328deg) rotate3d(0, 0, 1, 330deg) translate3d(0, 0, 84.5130412426vmin);
+}
+.star:nth-of-type(82) {
+  --size: 0.2690957031vmin;
+  --background: #19aded;
+  --shadow: 0 0 0.3954619004vmin 0.0696765863vmin #23b1ed;
+  --transform: rotate3d(1, 0, 0, 99deg) rotate3d(0, 1, 0, 128deg) rotate3d(0, 0, 1, 227deg) translate3d(0, 0, 82.6728302745vmin);
+}
+.star:nth-of-type(83) {
+  --size: 0.5815940619vmin;
+  --background: #19aded;
+  --shadow: 0 0 0.4193912979vmin 0.1203184929vmin #23b1ed;
+  --transform: rotate3d(1, 0, 0, 78deg) rotate3d(0, 1, 0, 276deg) rotate3d(0, 0, 1, 130deg) translate3d(0, 0, 80.0714601471vmin);
+}
+.star:nth-of-type(84) {
+  --size: 0.714584638vmin;
+  --background: #f57979;
+  --shadow: 0 0 0.6642953369vmin 0.3423138479vmin #f79595;
+  --transform: rotate3d(1, 0, 0, 258deg) rotate3d(0, 1, 0, 51deg) rotate3d(0, 0, 1, 62deg) translate3d(0, 0, 71.5628156052vmin);
+}
+.star:nth-of-type(85) {
+  --size: 0.2889790026vmin;
+  --background: #6b297c;
+  --shadow: 0 0 0.2578373251vmin 0.0980885951vmin #6b297c;
+  --transform: rotate3d(1, 0, 0, 152deg) rotate3d(0, 1, 0, 332deg) rotate3d(0, 0, 1, 314deg) translate3d(0, 0, 73.8536612766vmin);
+}
+.star:nth-of-type(86) {
+  --size: 0.4531392942vmin;
+  --background: #bbf8bc;
+  --shadow: 0 0 0.6387987708vmin 0.1856347109vmin #bbf8bc;
+  --transform: rotate3d(1, 0, 0, 184deg) rotate3d(0, 1, 0, 79deg) rotate3d(0, 0, 1, 33deg) translate3d(0, 0, 71.3542420551vmin);
+}
+.star:nth-of-type(87) {
+  --size: 0.2735260246vmin;
+  --background: #12a5e4;
+  --shadow: 0 0 0.3474965952vmin 0.0133173073vmin #31b6ef;
+  --transform: rotate3d(1, 0, 0, 180deg) rotate3d(0, 1, 0, 62deg) rotate3d(0, 0, 1, 55deg) translate3d(0, 0, 77.51729703vmin);
+}
+.star:nth-of-type(88) {
+  --size: 0.5688600278vmin;
+  --background: #ff3465;
+  --shadow: 0 0 0.495932749vmin 0.0909956054vmin #ff4875;
+  --transform: rotate3d(1, 0, 0, 23deg) rotate3d(0, 1, 0, 15deg) rotate3d(0, 0, 1, 215deg) translate3d(0, 0, 77.4178887188vmin);
+}
+.star:nth-of-type(89) {
+  --size: 0.4867686302vmin;
+  --background: #ff2a5e;
+  --shadow: 0 0 0.2860139594vmin 0.1280234973vmin #ff527c;
+  --transform: rotate3d(1, 0, 0, 268deg) rotate3d(0, 1, 0, 303deg) rotate3d(0, 0, 1, 237deg) translate3d(0, 0, 79.4550597347vmin);
+}
+.star:nth-of-type(90) {
+  --size: 0.3434429918vmin;
+  --background: #fff08a;
+  --shadow: 0 0 0.454517504vmin 0.1183625576vmin #fff6bd;
+  --transform: rotate3d(1, 0, 0, 185deg) rotate3d(0, 1, 0, 76deg) rotate3d(0, 0, 1, 172deg) translate3d(0, 0, 82.6147325277vmin);
+}
+.star:nth-of-type(91) {
+  --size: 0.6251035461vmin;
+  --background: #d31380;
+  --shadow: 0 0 0.4793214857vmin 0.2558801406vmin #ec2d99;
+  --transform: rotate3d(1, 0, 0, 320deg) rotate3d(0, 1, 0, 331deg) rotate3d(0, 0, 1, 54deg) translate3d(0, 0, 66.3381995636vmin);
+}
+.star:nth-of-type(92) {
+  --size: 0.5410155656vmin;
+  --background: #ea1b90;
+  --shadow: 0 0 0.4448200503vmin 0.1680558901vmin #ea1b90;
+  --transform: rotate3d(1, 0, 0, 87deg) rotate3d(0, 1, 0, 236deg) rotate3d(0, 0, 1, 12deg) translate3d(0, 0, 81.6357514707vmin);
+}
+.star:nth-of-type(93) {
+  --size: 0.2822595148vmin;
+  --background: #ebf0f3;
+  --shadow: 0 0 0.3706358989vmin 0.1275785747vmin #f1f4f7;
+  --transform: rotate3d(1, 0, 0, 52deg) rotate3d(0, 1, 0, 309deg) rotate3d(0, 0, 1, 230deg) translate3d(0, 0, 87.898365825vmin);
+}
+.star:nth-of-type(94) {
+  --size: 0.3016156434vmin;
+  --background: #6e2a7f;
+  --shadow: 0 0 0.1868466918vmin 0.0142544791vmin #6e2a7f;
+  --transform: rotate3d(1, 0, 0, 235deg) rotate3d(0, 1, 0, 190deg) rotate3d(0, 0, 1, 108deg) translate3d(0, 0, 77.2915669256vmin);
+}
+.star:nth-of-type(95) {
+  --size: 0.4116131851vmin;
+  --background: #9ff6a0;
+  --shadow: 0 0 0.4804877384vmin 0.0605683827vmin #a9f6aa;
+  --transform: rotate3d(1, 0, 0, 341deg) rotate3d(0, 1, 0, 315deg) rotate3d(0, 0, 1, 26deg) translate3d(0, 0, 68.952371105vmin);
+}
+.star:nth-of-type(96) {
+  --size: 0.5471374973vmin;
+  --background: #8380f5;
+  --shadow: 0 0 0.3747112422vmin 0.1306564296vmin #8380f5;
+  --transform: rotate3d(1, 0, 0, 186deg) rotate3d(0, 1, 0, 61deg) rotate3d(0, 0, 1, 15deg) translate3d(0, 0, 67.5200830668vmin);
+}
+.star:nth-of-type(97) {
+  --size: 0.575712746vmin;
+  --background: #7a77f4;
+  --shadow: 0 0 0.7159897421vmin 0.0021703752vmin #7a77f4;
+  --transform: rotate3d(1, 0, 0, 191deg) rotate3d(0, 1, 0, 131deg) rotate3d(0, 0, 1, 166deg) translate3d(0, 0, 82.2511657406vmin);
+}
+.star:nth-of-type(98) {
+  --size: 0.2979718095vmin;
+  --background: #f79a9a;
+  --shadow: 0 0 0.2379380195vmin 0.0738365139vmin #f79a9a;
+  --transform: rotate3d(1, 0, 0, 282deg) rotate3d(0, 1, 0, 31deg) rotate3d(0, 0, 1, 77deg) translate3d(0, 0, 85.9532314863vmin);
+}
+.star:nth-of-type(99) {
+  --size: 0.5544785221vmin;
+  --background: #f7a069;
+  --shadow: 0 0 0.4159930533vmin 0.243180934vmin #f9b287;
+  --transform: rotate3d(1, 0, 0, 104deg) rotate3d(0, 1, 0, 114deg) rotate3d(0, 0, 1, 303deg) translate3d(0, 0, 89.7123963073vmin);
+}
+.star:nth-of-type(100) {
+  --size: 0.7106273805vmin;
+  --background: #fefefe;
+  --shadow: 0 0 1.0036832945vmin 0.1365588091vmin #fefefe;
+  --transform: rotate3d(1, 0, 0, 314deg) rotate3d(0, 1, 0, 113deg) rotate3d(0, 0, 1, 293deg) translate3d(0, 0, 66.6320137903vmin);
+}
+.star:nth-of-type(101) {
+  --size: 0.3247191314vmin;
+  --background: #f79595;
+  --shadow: 0 0 0.35849059vmin 0.1491826884vmin #f79595;
+  --transform: rotate3d(1, 0, 0, 330deg) rotate3d(0, 1, 0, 171deg) rotate3d(0, 0, 1, 86deg) translate3d(0, 0, 73.2689421484vmin);
+}
+.star:nth-of-type(102) {
+  --size: 0.5170629274vmin;
+  --background: #d31380;
+  --shadow: 0 0 0.4299733224vmin 0.0316415121vmin #ec2d99;
+  --transform: rotate3d(1, 0, 0, 177deg) rotate3d(0, 1, 0, 87deg) rotate3d(0, 0, 1, 64deg) translate3d(0, 0, 69.7780743476vmin);
+}
+.star:nth-of-type(103) {
+  --size: 0.6589195546vmin;
+  --background: #fff4a8;
+  --shadow: 0 0 0.8785889562vmin 0.1384390333vmin #fff4a8;
+  --transform: rotate3d(1, 0, 0, 278deg) rotate3d(0, 1, 0, 82deg) rotate3d(0, 0, 1, 103deg) translate3d(0, 0, 75.0841161963vmin);
+}
+.star:nth-of-type(104) {
+  --size: 0.6521349634vmin;
+  --background: #f9b890;
+  --shadow: 0 0 0.6499415183vmin 0.062960562vmin #f9b890;
+  --transform: rotate3d(1, 0, 0, 267deg) rotate3d(0, 1, 0, 6deg) rotate3d(0, 0, 1, 111deg) translate3d(0, 0, 70.5477613142vmin);
+}
+.star:nth-of-type(105) {
+  --size: 0.7239869477vmin;
+  --background: #b2f7b3;
+  --shadow: 0 0 1.0179071252vmin 0.2368684603vmin #b2f7b3;
+  --transform: rotate3d(1, 0, 0, 77deg) rotate3d(0, 1, 0, 274deg) rotate3d(0, 0, 1, 323deg) translate3d(0, 0, 88.8209816531vmin);
+}
+.star:nth-of-type(106) {
+  --size: 0.3618600452vmin;
+  --background: #682878;
+  --shadow: 0 0 0.2248729854vmin 0.040586841vmin #682878;
+  --transform: rotate3d(1, 0, 0, 145deg) rotate3d(0, 1, 0, 350deg) rotate3d(0, 0, 1, 248deg) translate3d(0, 0, 69.6758490072vmin);
+}
+.star:nth-of-type(107) {
+  --size: 0.390554228vmin;
+  --background: #f68282;
+  --shadow: 0 0 0.5174265107vmin 0.1020195399vmin #f68c8c;
+  --transform: rotate3d(1, 0, 0, 238deg) rotate3d(0, 1, 0, 161deg) rotate3d(0, 0, 1, 215deg) translate3d(0, 0, 86.930947306vmin);
+}
+.star:nth-of-type(108) {
+  --size: 0.699612079vmin;
+  --background: #f9b890;
+  --shadow: 0 0 0.6914503972vmin 0.0323007537vmin #f9b890;
+  --transform: rotate3d(1, 0, 0, 19deg) rotate3d(0, 1, 0, 44deg) rotate3d(0, 0, 1, 242deg) translate3d(0, 0, 81.128191519vmin);
+}
+.star:nth-of-type(109) {
+  --size: 0.4582386712vmin;
+  --background: #f57e7e;
+  --shadow: 0 0 0.6065293451vmin 0.2113269685vmin #f79090;
+  --transform: rotate3d(1, 0, 0, 46deg) rotate3d(0, 1, 0, 188deg) rotate3d(0, 0, 1, 289deg) translate3d(0, 0, 67.9721028022vmin);
+}
+.star:nth-of-type(110) {
+  --size: 0.6896096129vmin;
+  --background: #7a77f4;
+  --shadow: 0 0 0.8621629989vmin 0.3012631305vmin #7a77f4;
+  --transform: rotate3d(1, 0, 0, 195deg) rotate3d(0, 1, 0, 355deg) rotate3d(0, 0, 1, 297deg) translate3d(0, 0, 79.6118853347vmin);
+}
+.star:nth-of-type(111) {
+  --size: 0.5707209308vmin;
+  --background: #f68282;
+  --shadow: 0 0 0.7447776076vmin 0.1683603561vmin #f68c8c;
+  --transform: rotate3d(1, 0, 0, 118deg) rotate3d(0, 1, 0, 166deg) rotate3d(0, 0, 1, 165deg) translate3d(0, 0, 86.8880015826vmin);
+}
+.star:nth-of-type(112) {
+  --size: 0.534703873vmin;
+  --background: #f8f9fb;
+  --shadow: 0 0 0.4752157201vmin 0.0154707467vmin #f8f9fb;
+  --transform: rotate3d(1, 0, 0, 290deg) rotate3d(0, 1, 0, 229deg) rotate3d(0, 0, 1, 193deg) translate3d(0, 0, 82.2690372801vmin);
+}
+.star:nth-of-type(113) {
+  --size: 0.4875420429vmin;
+  --background: #eee784;
+  --shadow: 0 0 0.5346670153vmin 0.1247261485vmin #f4efb0;
+  --transform: rotate3d(1, 0, 0, 116deg) rotate3d(0, 1, 0, 223deg) rotate3d(0, 0, 1, 359deg) translate3d(0, 0, 77.7455626154vmin);
+}
+.star:nth-of-type(114) {
+  --size: 0.3484824049vmin;
+  --background: #722b83;
+  --shadow: 0 0 0.2952895468vmin 0.1392535086vmin #722b83;
+  --transform: rotate3d(1, 0, 0, 44deg) rotate3d(0, 1, 0, 99deg) rotate3d(0, 0, 1, 59deg) translate3d(0, 0, 72.5240745609vmin);
+}
+.star:nth-of-type(115) {
+  --size: 0.5429964713vmin;
+  --background: #96f597;
+  --shadow: 0 0 0.7920215731vmin 0.2032291032vmin #b2f7b3;
+  --transform: rotate3d(1, 0, 0, 104deg) rotate3d(0, 1, 0, 292deg) rotate3d(0, 0, 1, 247deg) translate3d(0, 0, 66.4367579161vmin);
+}
+.star:nth-of-type(116) {
+  --size: 0.252718859vmin;
+  --background: #6764f3;
+  --shadow: 0 0 0.2830280763vmin 0.0311069021vmin #8380f5;
+  --transform: rotate3d(1, 0, 0, 68deg) rotate3d(0, 1, 0, 284deg) rotate3d(0, 0, 1, 169deg) translate3d(0, 0, 75.1817685301vmin);
+}
+.star:nth-of-type(117) {
+  --size: 0.2933606997vmin;
+  --background: #f0e991;
+  --shadow: 0 0 0.2527926893vmin 0.0156482321vmin #f2eda3;
+  --transform: rotate3d(1, 0, 0, 2deg) rotate3d(0, 1, 0, 198deg) rotate3d(0, 0, 1, 323deg) translate3d(0, 0, 81.3143898414vmin);
+}
+.star:nth-of-type(118) {
+  --size: 0.7493696572vmin;
+  --background: #d81383;
+  --shadow: 0 0 0.5832211355vmin 0.3068241327vmin #ec2997;
+  --transform: rotate3d(1, 0, 0, 43deg) rotate3d(0, 1, 0, 255deg) rotate3d(0, 0, 1, 47deg) translate3d(0, 0, 89.2819012467vmin);
+}
+.star:nth-of-type(119) {
+  --size: 0.6637248077vmin;
+  --background: #eb1f93;
+  --shadow: 0 0 0.7256371092vmin 0.2794442089vmin #eb1f93;
+  --transform: rotate3d(1, 0, 0, 295deg) rotate3d(0, 1, 0, 338deg) rotate3d(0, 0, 1, 311deg) translate3d(0, 0, 89.9264090614vmin);
+}
+.star:nth-of-type(120) {
+  --size: 0.7261499609vmin;
+  --background: #7a77f4;
+  --shadow: 0 0 0.5132598424vmin 0.0180798527vmin #7a77f4;
+  --transform: rotate3d(1, 0, 0, 105deg) rotate3d(0, 1, 0, 90deg) rotate3d(0, 0, 1, 228deg) translate3d(0, 0, 72.2716000627vmin);
+}
+.star:nth-of-type(121) {
+  --size: 0.2623516996vmin;
+  --background: #a9f6aa;
+  --shadow: 0 0 0.3739275384vmin 0.0486569735vmin #a9f6aa;
+  --transform: rotate3d(1, 0, 0, 284deg) rotate3d(0, 1, 0, 247deg) rotate3d(0, 0, 1, 120deg) translate3d(0, 0, 65.8150630571vmin);
+}
+.star:nth-of-type(122) {
+  --size: 0.4182912071vmin;
+  --background: #2cb4ee;
+  --shadow: 0 0 0.2517735896vmin 0.0305527985vmin #2cb4ee;
+  --transform: rotate3d(1, 0, 0, 46deg) rotate3d(0, 1, 0, 127deg) rotate3d(0, 0, 1, 43deg) translate3d(0, 0, 71.0237100692vmin);
+}
+.star:nth-of-type(123) {
+  --size: 0.3372248567vmin;
+  --background: #5a2268;
+  --shadow: 0 0 0.491144375vmin 0.1041037684vmin #682878;
+  --transform: rotate3d(1, 0, 0, 279deg) rotate3d(0, 1, 0, 69deg) rotate3d(0, 0, 1, 182deg) translate3d(0, 0, 69.9545908264vmin);
+}
+.star:nth-of-type(124) {
+  --size: 0.5651761529vmin;
+  --background: #dd1486;
+  --shadow: 0 0 0.6874551268vmin 0.0785043402vmin #eb2495;
+  --transform: rotate3d(1, 0, 0, 34deg) rotate3d(0, 1, 0, 14deg) rotate3d(0, 0, 1, 353deg) translate3d(0, 0, 75.2061517556vmin);
+}
+.star:nth-of-type(125) {
+  --size: 0.2625412038vmin;
+  --background: #8df48e;
+  --shadow: 0 0 0.2982571335vmin 0.0238156887vmin #bbf8bc;
+  --transform: rotate3d(1, 0, 0, 11deg) rotate3d(0, 1, 0, 189deg) rotate3d(0, 0, 1, 279deg) translate3d(0, 0, 81.1239183692vmin);
+}
+.star:nth-of-type(126) {
+  --size: 0.3851126933vmin;
+  --background: #ff85b6;
+  --shadow: 0 0 0.215323823vmin 0.1224847248vmin #ff85b6;
+  --transform: rotate3d(1, 0, 0, 20deg) rotate3d(0, 1, 0, 105deg) rotate3d(0, 0, 1, 214deg) translate3d(0, 0, 81.4978609395vmin);
+}
+.star:nth-of-type(127) {
+  --size: 0.4781898579vmin;
+  --background: #f1f4f7;
+  --shadow: 0 0 0.6943433806vmin 0.1440298629vmin #f1f4f7;
+  --transform: rotate3d(1, 0, 0, 234deg) rotate3d(0, 1, 0, 256deg) rotate3d(0, 0, 1, 280deg) translate3d(0, 0, 86.8003186976vmin);
+}
+.star:nth-of-type(128) {
+  --size: 0.6562343575vmin;
+  --background: #e11488;
+  --shadow: 0 0 0.7346475794vmin 0.1473301789vmin #eb1f93;
+  --transform: rotate3d(1, 0, 0, 260deg) rotate3d(0, 1, 0, 205deg) rotate3d(0, 0, 1, 238deg) translate3d(0, 0, 66.7180365021vmin);
+}
+.star:nth-of-type(129) {
+  --size: 0.2651457554vmin;
+  --background: #fff4a8;
+  --shadow: 0 0 0.3296532926vmin 0.1096422851vmin #fff4a8;
+  --transform: rotate3d(1, 0, 0, 312deg) rotate3d(0, 1, 0, 130deg) rotate3d(0, 0, 1, 169deg) translate3d(0, 0, 77.9704438099vmin);
+}
+.star:nth-of-type(130) {
+  --size: 0.2922622929vmin;
+  --background: #19aded;
+  --shadow: 0 0 0.2143777889vmin 0.1003647564vmin #23b1ed;
+  --transform: rotate3d(1, 0, 0, 45deg) rotate3d(0, 1, 0, 200deg) rotate3d(0, 0, 1, 86deg) translate3d(0, 0, 77.797461667vmin);
+}
+.star:nth-of-type(131) {
+  --size: 0.7309685526vmin;
+  --background: #fff08a;
+  --shadow: 0 0 0.9719030984vmin 0.1333469116vmin #fff6bd;
+  --transform: rotate3d(1, 0, 0, 30deg) rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 36deg) translate3d(0, 0, 71.8259276521vmin);
+}
+.star:nth-of-type(132) {
+  --size: 0.5379150887vmin;
+  --background: #eb2495;
+  --shadow: 0 0 0.7420076061vmin 0.2240378127vmin #eb2495;
+  --transform: rotate3d(1, 0, 0, 312deg) rotate3d(0, 1, 0, 308deg) rotate3d(0, 0, 1, 81deg) translate3d(0, 0, 73.902743599vmin);
+}
+.star:nth-of-type(133) {
+  --size: 0.6375337361vmin;
+  --background: #ff8fbc;
+  --shadow: 0 0 0.4272318638vmin 0.0268853655vmin #ff8fbc;
+  --transform: rotate3d(1, 0, 0, 71deg) rotate3d(0, 1, 0, 185deg) rotate3d(0, 0, 1, 358deg) translate3d(0, 0, 70.898864203vmin);
+}
+.star:nth-of-type(134) {
+  --size: 0.7392857058vmin;
+  --background: #f8f9fb;
+  --shadow: 0 0 0.7265796636vmin 0.0857827959vmin #f8f9fb;
+  --transform: rotate3d(1, 0, 0, 185deg) rotate3d(0, 1, 0, 242deg) rotate3d(0, 0, 1, 147deg) translate3d(0, 0, 79.6923002738vmin);
+}
+.star:nth-of-type(135) {
+  --size: 0.3103470311vmin;
+  --background: #fff6bd;
+  --shadow: 0 0 0.1698403555vmin 0.0686604595vmin #fff6bd;
+  --transform: rotate3d(1, 0, 0, 298deg) rotate3d(0, 1, 0, 78deg) rotate3d(0, 0, 1, 270deg) translate3d(0, 0, 84.2705210417vmin);
+}
+.star:nth-of-type(136) {
+  --size: 0.3048333858vmin;
+  --background: #f4f7f9;
+  --shadow: 0 0 0.166485536vmin 0.1097666008vmin #f4f7f9;
+  --transform: rotate3d(1, 0, 0, 207deg) rotate3d(0, 1, 0, 61deg) rotate3d(0, 0, 1, 181deg) translate3d(0, 0, 86.7370583546vmin);
+}
+.star:nth-of-type(137) {
+  --size: 0.5793529767vmin;
+  --background: #ff62a1;
+  --shadow: 0 0 0.7317298175vmin 0.2838353285vmin #ff95bf;
+  --transform: rotate3d(1, 0, 0, 140deg) rotate3d(0, 1, 0, 316deg) rotate3d(0, 0, 1, 167deg) translate3d(0, 0, 75.9465052551vmin);
+}
+.star:nth-of-type(138) {
+  --size: 0.5276045099vmin;
+  --background: #96f597;
+  --shadow: 0 0 0.6544417197vmin 0.0099123414vmin #b2f7b3;
+  --transform: rotate3d(1, 0, 0, 69deg) rotate3d(0, 1, 0, 210deg) rotate3d(0, 0, 1, 10deg) translate3d(0, 0, 68.9008541481vmin);
+}
+.star:nth-of-type(139) {
+  --size: 0.665615502vmin;
+  --background: #e1e8ed;
+  --shadow: 0 0 0.4863652904vmin 0.3219346824vmin #fbfcfd;
+  --transform: rotate3d(1, 0, 0, 181deg) rotate3d(0, 1, 0, 163deg) rotate3d(0, 0, 1, 137deg) translate3d(0, 0, 75.6570014581vmin);
+}
+.star:nth-of-type(140) {
+  --size: 0.4418382775vmin;
+  --background: #5e5af2;
+  --shadow: 0 0 0.396579827vmin 0.0530690936vmin #8c8af6;
+  --transform: rotate3d(1, 0, 0, 4deg) rotate3d(0, 1, 0, 323deg) rotate3d(0, 0, 1, 355deg) translate3d(0, 0, 78.1678274925vmin);
+}
+.star:nth-of-type(141) {
+  --size: 0.3027687854vmin;
+  --background: #ff85b6;
+  --shadow: 0 0 0.4475566641vmin 0.1324643968vmin #ff85b6;
+  --transform: rotate3d(1, 0, 0, 54deg) rotate3d(0, 1, 0, 325deg) rotate3d(0, 0, 1, 239deg) translate3d(0, 0, 68.0503066923vmin);
+}
+.star:nth-of-type(142) {
+  --size: 0.2593601309vmin;
+  --background: #ff80b3;
+  --shadow: 0 0 0.2616497727vmin 0.1065252581vmin #ff80b3;
+  --transform: rotate3d(1, 0, 0, 64deg) rotate3d(0, 1, 0, 71deg) rotate3d(0, 0, 1, 130deg) translate3d(0, 0, 87.6972172976vmin);
+}
+.star:nth-of-type(143) {
+  --size: 0.7346224624vmin;
+  --background: #f79a60;
+  --shadow: 0 0 0.8306827491vmin 0.2258741935vmin #f9b890;
+  --transform: rotate3d(1, 0, 0, 24deg) rotate3d(0, 1, 0, 127deg) rotate3d(0, 0, 1, 210deg) translate3d(0, 0, 81.6645774275vmin);
+}
+.star:nth-of-type(144) {
+  --size: 0.6650502887vmin;
+  --background: #f79a60;
+  --shadow: 0 0 0.6139911393vmin 0.1929220506vmin #f9b890;
+  --transform: rotate3d(1, 0, 0, 210deg) rotate3d(0, 1, 0, 237deg) rotate3d(0, 0, 1, 258deg) translate3d(0, 0, 75.9869695814vmin);
+}
+.star:nth-of-type(145) {
+  --size: 0.3078585193vmin;
+  --background: #682878;
+  --shadow: 0 0 0.3003909577vmin 0.0750425213vmin #682878;
+  --transform: rotate3d(1, 0, 0, 198deg) rotate3d(0, 1, 0, 12deg) rotate3d(0, 0, 1, 99deg) translate3d(0, 0, 80.7595158912vmin);
+}
+.star:nth-of-type(146) {
+  --size: 0.4421525309vmin;
+  --background: #9ff6a0;
+  --shadow: 0 0 0.3343150961vmin 0.028999623vmin #a9f6aa;
+  --transform: rotate3d(1, 0, 0, 235deg) rotate3d(0, 1, 0, 115deg) rotate3d(0, 0, 1, 155deg) translate3d(0, 0, 87.1720756797vmin);
+}
+.star:nth-of-type(147) {
+  --size: 0.7058618468vmin;
+  --background: #ebf0f3;
+  --shadow: 0 0 0.9547082234vmin 0.1575817181vmin #f1f4f7;
+  --transform: rotate3d(1, 0, 0, 87deg) rotate3d(0, 1, 0, 277deg) rotate3d(0, 0, 1, 217deg) translate3d(0, 0, 72.7691788718vmin);
+}
+.star:nth-of-type(148) {
+  --size: 0.598255338vmin;
+  --background: #f9b58b;
+  --shadow: 0 0 0.4267470947vmin 0.1679402302vmin #f9b58b;
+  --transform: rotate3d(1, 0, 0, 80deg) rotate3d(0, 1, 0, 11deg) rotate3d(0, 0, 1, 359deg) translate3d(0, 0, 65.5372461125vmin);
+}
+.star:nth-of-type(149) {
+  --size: 0.4654968556vmin;
+  --background: #f68282;
+  --shadow: 0 0 0.3125781123vmin 0.2096774559vmin #f68c8c;
+  --transform: rotate3d(1, 0, 0, 2deg) rotate3d(0, 1, 0, 185deg) rotate3d(0, 0, 1, 298deg) translate3d(0, 0, 65.2119394964vmin);
+}
+.star:nth-of-type(150) {
+  --size: 0.3781513062vmin;
+  --background: #5e5af2;
+  --shadow: 0 0 0.3504328004vmin 0.0242653299vmin #8c8af6;
+  --transform: rotate3d(1, 0, 0, 333deg) rotate3d(0, 1, 0, 296deg) rotate3d(0, 0, 1, 177deg) translate3d(0, 0, 79.9921630302vmin);
+}
+.star:nth-of-type(151) {
+  --size: 0.2715180539vmin;
+  --background: #a9f6aa;
+  --shadow: 0 0 0.3607872404vmin 0.0578150689vmin #a9f6aa;
+  --transform: rotate3d(1, 0, 0, 350deg) rotate3d(0, 1, 0, 325deg) rotate3d(0, 0, 1, 351deg) translate3d(0, 0, 69.6765674736vmin);
+}
+.star:nth-of-type(152) {
+  --size: 0.3979032391vmin;
+  --background: #efe788;
+  --shadow: 0 0 0.3054193208vmin 0.0605893392vmin #f3efac;
+  --transform: rotate3d(1, 0, 0, 254deg) rotate3d(0, 1, 0, 283deg) rotate3d(0, 0, 1, 149deg) translate3d(0, 0, 71.5651532536vmin);
+}
+.star:nth-of-type(153) {
+  --size: 0.3237530783vmin;
+  --background: #eb1f93;
+  --shadow: 0 0 0.1639426446vmin 0.0979084186vmin #eb1f93;
+  --transform: rotate3d(1, 0, 0, 132deg) rotate3d(0, 1, 0, 47deg) rotate3d(0, 0, 1, 8deg) translate3d(0, 0, 69.4504207314vmin);
+}
+.star:nth-of-type(154) {
+  --size: 0.5139249393vmin;
+  --background: #682878;
+  --shadow: 0 0 0.5793292249vmin 0.0662870866vmin #682878;
+  --transform: rotate3d(1, 0, 0, 320deg) rotate3d(0, 1, 0, 316deg) rotate3d(0, 0, 1, 292deg) translate3d(0, 0, 75.5347922369vmin);
+}
+.star:nth-of-type(155) {
+  --size: 0.4068032793vmin;
+  --background: #e8edf1;
+  --shadow: 0 0 0.4979286849vmin 0.063714107vmin #f4f7f9;
+  --transform: rotate3d(1, 0, 0, 166deg) rotate3d(0, 1, 0, 5deg) rotate3d(0, 0, 1, 288deg) translate3d(0, 0, 67.1600357615vmin);
+}
+.star:nth-of-type(156) {
+  --size: 0.635997775vmin;
+  --background: #ec2d99;
+  --shadow: 0 0 0.3202067331vmin 0.2012192915vmin #ec2d99;
+  --transform: rotate3d(1, 0, 0, 309deg) rotate3d(0, 1, 0, 37deg) rotate3d(0, 0, 1, 61deg) translate3d(0, 0, 85.4217525244vmin);
+}
+.star:nth-of-type(157) {
+  --size: 0.5154789059vmin;
+  --background: #ff80b3;
+  --shadow: 0 0 0.5114324571vmin 0.1312848531vmin #ff80b3;
+  --transform: rotate3d(1, 0, 0, 103deg) rotate3d(0, 1, 0, 147deg) rotate3d(0, 0, 1, 158deg) translate3d(0, 0, 73.9234990273vmin);
+}
+.star:nth-of-type(158) {
+  --size: 0.5797212445vmin;
+  --background: #ec2997;
+  --shadow: 0 0 0.6453169136vmin 0.2743158558vmin #ec2997;
+  --transform: rotate3d(1, 0, 0, 256deg) rotate3d(0, 1, 0, 322deg) rotate3d(0, 0, 1, 80deg) translate3d(0, 0, 78.4762526853vmin);
+}
+.star:nth-of-type(159) {
+  --size: 0.4467037123vmin;
+  --background: #13a9e9;
+  --shadow: 0 0 0.2960016683vmin 0.2203363244vmin #2cb4ee;
+  --transform: rotate3d(1, 0, 0, 101deg) rotate3d(0, 1, 0, 30deg) rotate3d(0, 0, 1, 290deg) translate3d(0, 0, 81.072495906vmin);
+}
+.star:nth-of-type(160) {
+  --size: 0.3413503333vmin;
+  --background: #ebf0f3;
+  --shadow: 0 0 0.3817186636vmin 0.0238009317vmin #f1f4f7;
+  --transform: rotate3d(1, 0, 0, 71deg) rotate3d(0, 1, 0, 101deg) rotate3d(0, 0, 1, 25deg) translate3d(0, 0, 72.7353911137vmin);
+}
+.star:nth-of-type(161) {
+  --size: 0.439769817vmin;
+  --background: #ff8fbc;
+  --shadow: 0 0 0.3527423638vmin 0.0904541526vmin #ff8fbc;
+  --transform: rotate3d(1, 0, 0, 4deg) rotate3d(0, 1, 0, 62deg) rotate3d(0, 0, 1, 178deg) translate3d(0, 0, 79.6418964364vmin);
+}
+.star:nth-of-type(162) {
+  --size: 0.6262317743vmin;
+  --background: #e1e8ed;
+  --shadow: 0 0 0.3914166818vmin 0.0859083473vmin #fbfcfd;
+  --transform: rotate3d(1, 0, 0, 236deg) rotate3d(0, 1, 0, 324deg) rotate3d(0, 0, 1, 262deg) translate3d(0, 0, 83.2975753766vmin);
+}
+.star:nth-of-type(163) {
+  --size: 0.5314805958vmin;
+  --background: #fff5b2;
+  --shadow: 0 0 0.6452361817vmin 0.1483704167vmin #fff5b2;
+  --transform: rotate3d(1, 0, 0, 314deg) rotate3d(0, 1, 0, 336deg) rotate3d(0, 0, 1, 183deg) translate3d(0, 0, 85.4758329121vmin);
+}
+.star:nth-of-type(164) {
+  --size: 0.4416060327vmin;
+  --background: #f57474;
+  --shadow: 0 0 0.3052034865vmin 0.1054193414vmin #f79a9a;
+  --transform: rotate3d(1, 0, 0, 169deg) rotate3d(0, 1, 0, 49deg) rotate3d(0, 0, 1, 245deg) translate3d(0, 0, 67.1907854831vmin);
+}
+.star:nth-of-type(165) {
+  --size: 0.6814722039vmin;
+  --background: #ff4371;
+  --shadow: 0 0 0.9763688626vmin 0.3269610636vmin #ff4371;
+  --transform: rotate3d(1, 0, 0, 262deg) rotate3d(0, 1, 0, 76deg) rotate3d(0, 0, 1, 173deg) translate3d(0, 0, 80.4368017012vmin);
+}
+.star:nth-of-type(166) {
+  --size: 0.5328027463vmin;
+  --background: #f68282;
+  --shadow: 0 0 0.3974114159vmin 0.2624861241vmin #f68c8c;
+  --transform: rotate3d(1, 0, 0, 312deg) rotate3d(0, 1, 0, 43deg) rotate3d(0, 0, 1, 317deg) translate3d(0, 0, 76.1074435298vmin);
+}
+.star:nth-of-type(167) {
+  --size: 0.3770857933vmin;
+  --background: #fff6b7;
+  --shadow: 0 0 0.2057409072vmin 0.0464448885vmin #fff6b7;
+  --transform: rotate3d(1, 0, 0, 45deg) rotate3d(0, 1, 0, 176deg) rotate3d(0, 0, 1, 121deg) translate3d(0, 0, 71.15501083vmin);
+}
+.star:nth-of-type(168) {
+  --size: 0.7334072634vmin;
+  --background: #13a9e9;
+  --shadow: 0 0 0.4701289619vmin 0.2316798964vmin #2cb4ee;
+  --transform: rotate3d(1, 0, 0, 332deg) rotate3d(0, 1, 0, 179deg) rotate3d(0, 0, 1, 130deg) translate3d(0, 0, 76.4705580363vmin);
+}
+.star:nth-of-type(169) {
+  --size: 0.6959105046vmin;
+  --background: #e6158b;
+  --shadow: 0 0 0.9151161041vmin 0.0365918608vmin #ea1b90;
+  --transform: rotate3d(1, 0, 0, 279deg) rotate3d(0, 1, 0, 26deg) rotate3d(0, 0, 1, 130deg) translate3d(0, 0, 69.2605630462vmin);
+}
+.star:nth-of-type(170) {
+  --size: 0.354282823vmin;
+  --background: #dd1486;
+  --shadow: 0 0 0.2852696798vmin 0.0435692063vmin #eb2495;
+  --transform: rotate3d(1, 0, 0, 183deg) rotate3d(0, 1, 0, 154deg) rotate3d(0, 0, 1, 50deg) translate3d(0, 0, 69.7151420051vmin);
+}
+.star:nth-of-type(171) {
+  --size: 0.3180784859vmin;
+  --background: #96f597;
+  --shadow: 0 0 0.22226387vmin 0.0519162923vmin #b2f7b3;
+  --transform: rotate3d(1, 0, 0, 141deg) rotate3d(0, 1, 0, 4deg) rotate3d(0, 0, 1, 222deg) translate3d(0, 0, 85.1018227171vmin);
+}
+.star:nth-of-type(172) {
+  --size: 0.6761078376vmin;
+  --background: #f4f7f9;
+  --shadow: 0 0 0.6754831979vmin 0.181467547vmin #f4f7f9;
+  --transform: rotate3d(1, 0, 0, 41deg) rotate3d(0, 1, 0, 177deg) rotate3d(0, 0, 1, 16deg) translate3d(0, 0, 78.7897366049vmin);
+}
+.star:nth-of-type(173) {
+  --size: 0.3692533768vmin;
+  --background: #6c69f3;
+  --shadow: 0 0 0.3920660267vmin 0.0595252111vmin #7e7bf5;
+  --transform: rotate3d(1, 0, 0, 300deg) rotate3d(0, 1, 0, 252deg) rotate3d(0, 0, 1, 331deg) translate3d(0, 0, 84.7671122392vmin);
+}
+.star:nth-of-type(174) {
+  --size: 0.5760078708vmin;
+  --background: #572164;
+  --shadow: 0 0 0.4084025618vmin 0.1345997932vmin #6b297c;
+  --transform: rotate3d(1, 0, 0, 91deg) rotate3d(0, 1, 0, 35deg) rotate3d(0, 0, 1, 1deg) translate3d(0, 0, 80.8381864515vmin);
+}
+.star:nth-of-type(175) {
+  --size: 0.6448693646vmin;
+  --background: #572164;
+  --shadow: 0 0 0.6204599937vmin 0.2471683011vmin #6b297c;
+  --transform: rotate3d(1, 0, 0, 185deg) rotate3d(0, 1, 0, 259deg) rotate3d(0, 0, 1, 23deg) translate3d(0, 0, 68.3543683195vmin);
+}
+.star:nth-of-type(176) {
+  --size: 0.3023031719vmin;
+  --background: #642674;
+  --shadow: 0 0 0.3975795793vmin 0.0505311642vmin #642674;
+  --transform: rotate3d(1, 0, 0, 276deg) rotate3d(0, 1, 0, 149deg) rotate3d(0, 0, 1, 47deg) translate3d(0, 0, 79.9085835994vmin);
+}
+.star:nth-of-type(177) {
+  --size: 0.7438488591vmin;
+  --background: #f79d65;
+  --shadow: 0 0 0.8427147604vmin 0.0131042374vmin #f9b58b;
+  --transform: rotate3d(1, 0, 0, 295deg) rotate3d(0, 1, 0, 293deg) rotate3d(0, 0, 1, 137deg) translate3d(0, 0, 83.1970418646vmin);
+}
+.star:nth-of-type(178) {
+  --size: 0.3530779472vmin;
+  --background: #9bf59c;
+  --shadow: 0 0 0.276577475vmin 0.142119947vmin #adf7ae;
+  --transform: rotate3d(1, 0, 0, 199deg) rotate3d(0, 1, 0, 169deg) rotate3d(0, 0, 1, 98deg) translate3d(0, 0, 81.8664055897vmin);
+}
+.star:nth-of-type(179) {
+  --size: 0.2857486412vmin;
+  --background: #fff08f;
+  --shadow: 0 0 0.2226571321vmin 0.0302689295vmin #fff6b7;
+  --transform: rotate3d(1, 0, 0, 44deg) rotate3d(0, 1, 0, 65deg) rotate3d(0, 0, 1, 145deg) translate3d(0, 0, 68.5588256403vmin);
+}
+.star:nth-of-type(180) {
+  --size: 0.3246195759vmin;
+  --background: #e4ebef;
+  --shadow: 0 0 0.3051942433vmin 0.0805437994vmin #f8f9fb;
+  --transform: rotate3d(1, 0, 0, 79deg) rotate3d(0, 1, 0, 113deg) rotate3d(0, 0, 1, 254deg) translate3d(0, 0, 67.8471918828vmin);
+}
+.star:nth-of-type(181) {
+  --size: 0.2701962038vmin;
+  --background: #706df4;
+  --shadow: 0 0 0.3330216499vmin 0.026097545vmin #7a77f4;
+  --transform: rotate3d(1, 0, 0, 162deg) rotate3d(0, 1, 0, 47deg) rotate3d(0, 0, 1, 138deg) translate3d(0, 0, 65.7560404016vmin);
+}
+.star:nth-of-type(182) {
+  --size: 0.4355792568vmin;
+  --background: #b7f8b7;
+  --shadow: 0 0 0.3684725069vmin 0.1251485332vmin #b7f8b7;
+  --transform: rotate3d(1, 0, 0, 59deg) rotate3d(0, 1, 0, 154deg) rotate3d(0, 0, 1, 90deg) translate3d(0, 0, 82.5797263958vmin);
+}
+.star:nth-of-type(183) {
+  --size: 0.6769520858vmin;
+  --background: #f4efb0;
+  --shadow: 0 0 0.6809642873vmin 0.1518828966vmin #f4efb0;
+  --transform: rotate3d(1, 0, 0, 14deg) rotate3d(0, 1, 0, 63deg) rotate3d(0, 0, 1, 5deg) translate3d(0, 0, 76.0558972813vmin);
+}
+.star:nth-of-type(184) {
+  --size: 0.4802646824vmin;
+  --background: #f57e7e;
+  --shadow: 0 0 0.6094532268vmin 0.1850396668vmin #f79090;
+  --transform: rotate3d(1, 0, 0, 315deg) rotate3d(0, 1, 0, 178deg) rotate3d(0, 0, 1, 224deg) translate3d(0, 0, 71.8455129919vmin);
+}
+.star:nth-of-type(185) {
+  --size: 0.5999203673vmin;
+  --background: #6764f3;
+  --shadow: 0 0 0.7679571334vmin 0.0656869193vmin #8380f5;
+  --transform: rotate3d(1, 0, 0, 164deg) rotate3d(0, 1, 0, 197deg) rotate3d(0, 0, 1, 102deg) translate3d(0, 0, 81.5567146094vmin);
+}
+.star:nth-of-type(186) {
+  --size: 0.3198691928vmin;
+  --background: #f79a9a;
+  --shadow: 0 0 0.2888132471vmin 0.0259282955vmin #f79a9a;
+  --transform: rotate3d(1, 0, 0, 61deg) rotate3d(0, 1, 0, 25deg) rotate3d(0, 0, 1, 150deg) translate3d(0, 0, 65.9181289024vmin);
+}
+.star:nth-of-type(187) {
+  --size: 0.6505737562vmin;
+  --background: #ff71aa;
+  --shadow: 0 0 0.4612574827vmin 0.1923100003vmin #ff85b6;
+  --transform: rotate3d(1, 0, 0, 18deg) rotate3d(0, 1, 0, 100deg) rotate3d(0, 0, 1, 7deg) translate3d(0, 0, 89.5857305897vmin);
+}
+.star:nth-of-type(188) {
+  --size: 0.5083141176vmin;
+  --background: #f79090;
+  --shadow: 0 0 0.6393339716vmin 0.2105558709vmin #f79090;
+  --transform: rotate3d(1, 0, 0, 153deg) rotate3d(0, 1, 0, 86deg) rotate3d(0, 0, 1, 55deg) translate3d(0, 0, 84.866584106vmin);
+}
+.star:nth-of-type(189) {
+  --size: 0.6388630266vmin;
+  --background: #91f493;
+  --shadow: 0 0 0.8513344696vmin 0.0653949537vmin #b7f8b7;
+  --transform: rotate3d(1, 0, 0, 105deg) rotate3d(0, 1, 0, 291deg) rotate3d(0, 0, 1, 27deg) translate3d(0, 0, 79.7251146747vmin);
+}
+.star:nth-of-type(190) {
+  --size: 0.7498626479vmin;
+  --background: #d81383;
+  --shadow: 0 0 0.8449719007vmin 0.0399732845vmin #ec2997;
+  --transform: rotate3d(1, 0, 0, 351deg) rotate3d(0, 1, 0, 19deg) rotate3d(0, 0, 1, 114deg) translate3d(0, 0, 81.6244865088vmin);
+}
+.star:nth-of-type(191) {
+  --size: 0.6868463073vmin;
+  --background: #e1e8ed;
+  --shadow: 0 0 0.9300435759vmin 0.1119154183vmin #fbfcfd;
+  --transform: rotate3d(1, 0, 0, 203deg) rotate3d(0, 1, 0, 327deg) rotate3d(0, 0, 1, 187deg) translate3d(0, 0, 80.9123378396vmin);
+}
+.star:nth-of-type(192) {
+  --size: 0.3485805492vmin;
+  --background: #ff8ab9;
+  --shadow: 0 0 0.2351831981vmin 0.0409546276vmin #ff8ab9;
+  --transform: rotate3d(1, 0, 0, 146deg) rotate3d(0, 1, 0, 237deg) rotate3d(0, 0, 1, 113deg) translate3d(0, 0, 79.6741054413vmin);
+}
+.star:nth-of-type(193) {
+  --size: 0.3570745126vmin;
+  --background: #542061;
+  --shadow: 0 0 0.36388619vmin 0.1655930938vmin #6e2a7f;
+  --transform: rotate3d(1, 0, 0, 15deg) rotate3d(0, 1, 0, 84deg) rotate3d(0, 0, 1, 38deg) translate3d(0, 0, 85.258286756vmin);
+}
+.star:nth-of-type(194) {
+  --size: 0.479785137vmin;
+  --background: #eb2495;
+  --shadow: 0 0 0.5593560402vmin 0.0765445629vmin #eb2495;
+  --transform: rotate3d(1, 0, 0, 165deg) rotate3d(0, 1, 0, 68deg) rotate3d(0, 0, 1, 313deg) translate3d(0, 0, 67.4384176919vmin);
+}
+.star:nth-of-type(195) {
+  --size: 0.5953351413vmin;
+  --background: #6e2a7f;
+  --shadow: 0 0 0.4209717838vmin 0.0493446931vmin #6e2a7f;
+  --transform: rotate3d(1, 0, 0, 245deg) rotate3d(0, 1, 0, 303deg) rotate3d(0, 0, 1, 231deg) translate3d(0, 0, 74.1569214437vmin);
+}
+.star:nth-of-type(196) {
+  --size: 0.6925279407vmin;
+  --background: #7e7bf5;
+  --shadow: 0 0 0.7424528719vmin 0.3300579891vmin #7e7bf5;
+  --transform: rotate3d(1, 0, 0, 336deg) rotate3d(0, 1, 0, 167deg) rotate3d(0, 0, 1, 141deg) translate3d(0, 0, 65.1780445509vmin);
+}
+.star:nth-of-type(197) {
+  --size: 0.378112068vmin;
+  --background: #fff08a;
+  --shadow: 0 0 0.4262337118vmin 0.0580427822vmin #fff6bd;
+  --transform: rotate3d(1, 0, 0, 6deg) rotate3d(0, 1, 0, 288deg) rotate3d(0, 0, 1, 264deg) translate3d(0, 0, 74.8598330708vmin);
+}
+.star:nth-of-type(198) {
+  --size: 0.6379292445vmin;
+  --background: #fff08f;
+  --shadow: 0 0 0.7568889054vmin 0.1804892074vmin #fff6b7;
+  --transform: rotate3d(1, 0, 0, 111deg) rotate3d(0, 1, 0, 338deg) rotate3d(0, 0, 1, 345deg) translate3d(0, 0, 84.6026119435vmin);
+}
+.star:nth-of-type(199) {
+  --size: 0.3800665091vmin;
+  --background: #f79d65;
+  --shadow: 0 0 0.4923703074vmin 0.0409367434vmin #f9b58b;
+  --transform: rotate3d(1, 0, 0, 165deg) rotate3d(0, 1, 0, 279deg) rotate3d(0, 0, 1, 355deg) translate3d(0, 0, 74.6475606135vmin);
+}
+.star:nth-of-type(200) {
+  --size: 0.6967915314vmin;
+  --background: #6e2a7f;
+  --shadow: 0 0 0.4557081481vmin 0.2997490184vmin #6e2a7f;
+  --transform: rotate3d(1, 0, 0, 217deg) rotate3d(0, 1, 0, 325deg) rotate3d(0, 0, 1, 55deg) translate3d(0, 0, 71.8734307801vmin);
+}
+
+@-webkit-keyframes rotation {
+  100% {
+    -webkit-transform: rotate3d(1, 1, 1, 360deg);
+            transform: rotate3d(1, 1, 1, 360deg);
+  }
+}
+@keyframes rotation {
+  100% {
+    -webkit-transform: rotate3d(1, 1, 1, 360deg);
+            transform: rotate3d(1, 1, 1, 360deg);
+  }
+}
+@-webkit-keyframes appear {
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes appear {
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+@-webkit-keyframes scale {
+  0%, 100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(0.75, 0.75, 0.75);
+            transform: scale3d(0.75, 0.75, 0.75);
+  }
+}
+@keyframes scale {
+  0%, 100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(0.75, 0.75, 0.75);
+            transform: scale3d(0.75, 0.75, 0.75);
+  }
+}
+/*# sourceMappingURL=error-page.css.map */

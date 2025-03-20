@@ -1,0 +1,37 @@
+/* Responsive css */
+@media (max-width: 768px) {
+  .page-section .content-detail {
+    padding: 0 15px;
+  }
+  .page-section .content-detail .global-title {
+    font-size: 30px;
+  }
+  .page-section .content-detail .error {
+    font-size: 85px;
+  }
+  .page-section .content-detail .sub-title {
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+  }
+  .page-section .content-detail .back-btn .btn {
+    font-size: 10px;
+  }
+  .page-section .content-detail .detail-text {
+    font-size: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .page-section .content-detail {
+    padding: 0 15px;
+  }
+  .page-section .content-detail .global-title {
+    font-size: 20px;
+  }
+  .page-section .content-detail .error {
+    font-size: 70px;
+  }
+  .page-section .content-detail .sub-title {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,225 @@
+/*==============
+  [00] Page General css
+=================*/
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+.loader-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #000;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+}
+
+.loader {
+  border: 16px solid #000;
+  border-radius: 50%;
+  border-top: 16px double #ffe483;
+  border-bottom: 16px double #ffe483;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*==============
+  [01] Page css
+=================*/
+.page-section {
+  background: #000;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.page-section .full-width-screen {
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
+}
+.page-section .content-detail {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.page-section .content-detail .global-title,
+.page-section .content-detail .global-title-2 {
+  position: relative;
+  font-size: 100px;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+.page-section .content-detail .global-title::before {
+  content: "404";
+  position: absolute;
+  color: #e91e63;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: -1;
+}
+.page-section .content-detail .global-title::after {
+  content: "404";
+  position: absolute;
+  color: #2196f3;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: -2;
+}
+.page-section .content-detail .global-title-2::before {
+  content: "Under Construction";
+  position: absolute;
+  color: #e91e63;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: -1;
+}
+.page-section .content-detail .global-title-2::after {
+  content: "Under Construction";
+  position: absolute;
+  color: #2196f3;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: -2;
+}
+.page-section .content-detail .global-title:after,
+.page-section .content-detail .global-title-2:after {
+  -webkit-animation: Glitch 1s -0.4s linear infinite;
+          animation: Glitch 1s -0.4s linear infinite;
+}
+.page-section .content-detail .global-title:before,
+.page-section .content-detail .global-title-2:before {
+  -webkit-animation: Glitch 1s linear infinite;
+          animation: Glitch 1s linear infinite;
+}
+.page-section .content-detail .sub-title,
+.page-section .content-detail .detail-text {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 2px;
+}
+.page-section .content-detail .sub-title {
+  margin-bottom: 15px;
+  line-height: 50px;
+  color: #fff;
+  font-size: 30px;
+}
+.page-section .content-detail .back-btn {
+  margin-top: 15px;
+}
+.page-section .content-detail .back-btn .btn {
+  padding: 8px 15px;
+  color: #000000;
+  border-radius: 30px;
+  font-size: 12px;
+  background-color: #ffffff;
+  letter-spacing: 2px;
+}
+@-webkit-keyframes Glitch {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  20% {
+    top: 3px;
+    left: 3px;
+  }
+  40% {
+    top: 3px;
+    left: -3px;
+  }
+  60% {
+    top: -3px;
+    left: 3px;
+  }
+  80% {
+    top: -3px;
+    left: -3px;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+  }
+}
+@keyframes Glitch {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  20% {
+    top: 3px;
+    left: 3px;
+  }
+  40% {
+    top: 3px;
+    left: -3px;
+  }
+  60% {
+    top: -3px;
+    left: 3px;
+  }
+  80% {
+    top: -3px;
+    left: -3px;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+  }
+}

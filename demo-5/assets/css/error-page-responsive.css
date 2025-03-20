@@ -1,0 +1,38 @@
+/* Responsive css */
+@media (max-width: 1024px) {
+  .page-section .content-detail .glitch {
+    font-size: 50px;
+  }
+  .page-section .content-detail .sub-title {
+    font-size: 25px;
+  }
+}
+@media (max-width: 991px) {
+  .page-section .content-detail .mid-content h1 {
+    font-size: 55px;
+  }
+}
+@media (max-width: 767px) {
+  .page-section .content-detail .mid-content h1 {
+    font-size: 45px;
+  }
+}
+@media (max-width: 612px) {
+  .page-section .content-detail .glitch {
+    font-size: 45px;
+  }
+}
+@media (max-width: 575px) {
+  .page-section .content-detail .mid-content h1 {
+    font-size: 35px;
+  }
+}
+@media (max-width: 280px) {
+  .page-section .content-detail .detail-text {
+    font-size: 10px;
+  }
+  .page-section .content-detail .glitch {
+    font-size: 23px;
+  }
+}
+/*# sourceMappingURL=error-page-responsive.css.map */

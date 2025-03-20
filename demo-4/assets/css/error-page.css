@@ -1,0 +1,207 @@
+/*==============
+  [00] Page General css
+=================*/
+body {
+  font-family: "Press Start 2P", cursive;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Press Start 2P", cursive;
+}
+
+.loader-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #000;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+}
+
+.loader {
+  border: 16px solid #000;
+  border-radius: 50%;
+  border-top: 16px double #ffe483;
+  border-bottom: 16px double #ffe483;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*==============
+  [01] Page css
+=================*/
+.page-section {
+  background: #000;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.page-section .content-detail {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.page-section .content-detail .global-title {
+  font-size: 100px;
+  -webkit-animation: global-title 1s infinite;
+          animation: global-title 1s infinite;
+  color: #fff;
+  margin-bottom: 30px;
+}
+.page-section .content-detail .construction {
+  font-size: 50px;
+  text-align: center;
+}
+.page-section .content-detail .detail-text {
+  display: block;
+  color: #fff;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 10px;
+}
+.page-section .content-detail .sub-title {
+  margin: 15px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+}
+.page-section .content-detail .back-btn {
+  margin-top: 15px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.page-section .content-detail .back-btn .btn {
+  padding: 8px 15px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.page-section .content-detail .back-btn .btn:hover {
+  color: #000000;
+  background-color: white;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+@-webkit-keyframes global-title {
+  0%, 50%, 100% {
+    -webkit-transform: skewX(0deg) translateX(0px) scale(1, 1);
+            transform: skewX(0deg) translateX(0px) scale(1, 1);
+    text-shadow: 0px 0 cyan;
+    -webkit-clip-path: none;
+            clip-path: none;
+  }
+  5%, 15%, 25% {
+    -webkit-transform: skewX(12deg) translateX(-5px) scale(1, -1);
+            transform: skewX(12deg) translateX(-5px) scale(1, -1);
+    text-shadow: 0px -2rem magenta, -5px 5px #fe0000;
+  }
+  10%, 30% {
+    -webkit-transform: skewX(25deg) translateX(15px) scale(1, 1);
+            transform: skewX(25deg) translateX(15px) scale(1, 1);
+    text-shadow: -1rem 2rem yellow;
+  }
+  35%, 45% {
+    -webkit-transform: skewX(-12deg) translateX(-5px) scale(1, 1);
+            transform: skewX(-12deg) translateX(-5px) scale(1, 1);
+    text-shadow: -1rem 2rem #fe0000, -10px 0px #ff00fe;
+  }
+  11%, 14% {
+    -webkit-clip-path: polygon(100% 0, 0 18%, 99% 46%, 0 78%, 100% 100%, 100% 57%, 0 100%, 100% 76%, 0 59%, 100% 35%, 0 37%, 100% 21%);
+            clip-path: polygon(100% 0, 0 18%, 99% 46%, 0 78%, 100% 100%, 100% 57%, 0 100%, 100% 76%, 0 59%, 100% 35%, 0 37%, 100% 21%);
+  }
+  12%, 16% {
+    -webkit-clip-path: polygon(0 51%, 0 29%, 100% 0, 0 14%, 99% 57%, 100% 23%, 0 100%, 100% 72%, 0 0, 100% 100%);
+            clip-path: polygon(0 51%, 0 29%, 100% 0, 0 14%, 99% 57%, 100% 23%, 0 100%, 100% 72%, 0 0, 100% 100%);
+  }
+  13%, 17% {
+    -webkit-clip-path: polygon(0% 0%, 99% 0%, 99% 8%, 0% 7%, 0% 14%, 99% 15%, 100% 22%, 0% 22%, 0% 30%, 99% 30%, 99% 39%, 0% 37%, 0% 43%, 100% 45%, 100% 50%, 0% 49%, 0% 56%, 99% 57%, 99% 63%, 0% 63%, 0% 68%, 99% 68%, 99% 75%, 0% 76%, 0% 81%, 100% 83%, 100% 89%, 0% 88%, 0% 94%, 100% 95%, 100% 100%, 0% 99%);
+            clip-path: polygon(0% 0%, 99% 0%, 99% 8%, 0% 7%, 0% 14%, 99% 15%, 100% 22%, 0% 22%, 0% 30%, 99% 30%, 99% 39%, 0% 37%, 0% 43%, 100% 45%, 100% 50%, 0% 49%, 0% 56%, 99% 57%, 99% 63%, 0% 63%, 0% 68%, 99% 68%, 99% 75%, 0% 76%, 0% 81%, 100% 83%, 100% 89%, 0% 88%, 0% 94%, 100% 95%, 100% 100%, 0% 99%);
+  }
+}
+@keyframes global-title {
+  0%, 50%, 100% {
+    -webkit-transform: skewX(0deg) translateX(0px) scale(1, 1);
+            transform: skewX(0deg) translateX(0px) scale(1, 1);
+    text-shadow: 0px 0 cyan;
+    -webkit-clip-path: none;
+            clip-path: none;
+  }
+  5%, 15%, 25% {
+    -webkit-transform: skewX(12deg) translateX(-5px) scale(1, -1);
+            transform: skewX(12deg) translateX(-5px) scale(1, -1);
+    text-shadow: 0px -2rem magenta, -5px 5px #fe0000;
+  }
+  10%, 30% {
+    -webkit-transform: skewX(25deg) translateX(15px) scale(1, 1);
+            transform: skewX(25deg) translateX(15px) scale(1, 1);
+    text-shadow: -1rem 2rem yellow;
+  }
+  35%, 45% {
+    -webkit-transform: skewX(-12deg) translateX(-5px) scale(1, 1);
+            transform: skewX(-12deg) translateX(-5px) scale(1, 1);
+    text-shadow: -1rem 2rem #fe0000, -10px 0px #ff00fe;
+  }
+  11%, 14% {
+    -webkit-clip-path: polygon(100% 0, 0 18%, 99% 46%, 0 78%, 100% 100%, 100% 57%, 0 100%, 100% 76%, 0 59%, 100% 35%, 0 37%, 100% 21%);
+            clip-path: polygon(100% 0, 0 18%, 99% 46%, 0 78%, 100% 100%, 100% 57%, 0 100%, 100% 76%, 0 59%, 100% 35%, 0 37%, 100% 21%);
+  }
+  12%, 16% {
+    -webkit-clip-path: polygon(0 51%, 0 29%, 100% 0, 0 14%, 99% 57%, 100% 23%, 0 100%, 100% 72%, 0 0, 100% 100%);
+            clip-path: polygon(0 51%, 0 29%, 100% 0, 0 14%, 99% 57%, 100% 23%, 0 100%, 100% 72%, 0 0, 100% 100%);
+  }
+  13%, 17% {
+    -webkit-clip-path: polygon(0% 0%, 99% 0%, 99% 8%, 0% 7%, 0% 14%, 99% 15%, 100% 22%, 0% 22%, 0% 30%, 99% 30%, 99% 39%, 0% 37%, 0% 43%, 100% 45%, 100% 50%, 0% 49%, 0% 56%, 99% 57%, 99% 63%, 0% 63%, 0% 68%, 99% 68%, 99% 75%, 0% 76%, 0% 81%, 100% 83%, 100% 89%, 0% 88%, 0% 94%, 100% 95%, 100% 100%, 0% 99%);
+            clip-path: polygon(0% 0%, 99% 0%, 99% 8%, 0% 7%, 0% 14%, 99% 15%, 100% 22%, 0% 22%, 0% 30%, 99% 30%, 99% 39%, 0% 37%, 0% 43%, 100% 45%, 100% 50%, 0% 49%, 0% 56%, 99% 57%, 99% 63%, 0% 63%, 0% 68%, 99% 68%, 99% 75%, 0% 76%, 0% 81%, 100% 83%, 100% 89%, 0% 88%, 0% 94%, 100% 95%, 100% 100%, 0% 99%);
+  }
+}

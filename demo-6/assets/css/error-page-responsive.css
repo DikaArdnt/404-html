@@ -1,0 +1,28 @@
+/* Responsive css */
+@media (max-width: 1024px) {
+  .page-section .content-detail .global-title {
+    font-size: 85px;
+  }
+  .page-section .content-detail .sub-title {
+    font-size: 25px;
+  }
+  .page-section .content-detail .global-title-2 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 612px) {
+  .page-section .content-detail .global-title {
+    font-size: 80px;
+  }
+  .page-section .content-detail .global-title-2 {
+    font-size: 55px;
+  }
+}
+@media (max-width: 280px) {
+  .page-section .content-detail .global-title-2 {
+    font-size: 40px;
+  }
+  .page-section .content-detail .detail-text {
+    font-size: 10px;
+  }
+}
